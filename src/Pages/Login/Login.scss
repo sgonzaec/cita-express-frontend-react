@@ -1,0 +1,11 @@
+.login-container {
+    height: 100vh;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    .card {
+        min-width: 20em;
+        background-color: rgba(225,225,225,0.6);
+    }
+}
