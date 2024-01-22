@@ -1,8 +1,55 @@
+input,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: var(--orange);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.input-error {
+  border: 1px solid red;
+}
+
+.input-error-text {
+  float: left;
+  color: red;
+  font-size: 14px;
+}
+
 .card {
-    text-align: center;
-    padding: 1em;
-    margin: 1em;
-    border-radius: 15px;
-    height: fit-content;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  text-align: center;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 15px;
+  height: fit-content;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+input.disabled-buttom{
+  pointer-events: none;
+  color: gray;
+  background-color: #e7e7e7;
+  border-color: gray;
+  cursor: not-allowed;
 }

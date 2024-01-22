@@ -1,0 +1,25 @@
+.register-container {
+  height: 100vh;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  .card {
+    min-width: 20em;
+    background-color: rgba(225, 225, 225, 0.6);
+    .register_title {
+      color: white;
+    }
+    label {
+      color: white;
+      font-size: 14px;
+      float: left;
+    }
+    input {
+      margin-top: 0;
+    }
+    select {
+        color: gray;
+    }
+  }
+}
