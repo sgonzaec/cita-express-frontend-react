@@ -17,6 +17,7 @@ const Login = () => {
       ) : (
         <article className="login-container">
           <div className="card">
+            <h2 className="login_title">Iniciar Sesión</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="input-container">
                 <label htmlFor="user"></label>
