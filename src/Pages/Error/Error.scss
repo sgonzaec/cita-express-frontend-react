@@ -1,0 +1,22 @@
+#error-page {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        font-size: 10em;
+        color: var(--orange);
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        color: white;
+        margin: 0;
+    }
+    button {
+        background-color: var(--brown);
+    }
+}
