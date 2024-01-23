@@ -7,7 +7,7 @@ const citaExpressClient = {
     return await fetch(`${environments.baseURL}/login`, {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     }).then((res) => {
@@ -20,19 +20,23 @@ const citaExpressClient = {
   },
 
   RegisterUser: async (body: RegisterPayload) => {
-    return await fetch(`${environments.baseURL}/register`, {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    }).then((res) => {
-      if (res.status >= 200 && res.status < 300) {
-        return res.json();
-      } else {
-        return "Error intentando registrar el usuario.";
-      }
-    });
+    try {
+      return await fetch(`${environments.baseURL}/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }).then((res) => {
+        if (res.status >= 200 && res.status < 300) {
+          return res.json();
+        } else {
+          return "Error intentando registrar el usuario.";
+        }
+      });
+    } catch (error) {
+      throw new Error()
+    }
   },
 };
 
