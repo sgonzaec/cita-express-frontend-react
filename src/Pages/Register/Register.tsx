@@ -1,8 +1,8 @@
-import Background from "../../Components/Background/Background";
 import Loading from "../../Components/Loading/Loading";
 import "./Register.scss";
 import { RegisterService } from "../../Services/Register.service";
 import RegisterForm from "./RegisterForm/RegisterForm";
+import InfoTemplate from "../../Templates/Info.template";
 
 const Register = () => {
   const { loading, register, handleSubmit, errors, onSubmit, response } =
@@ -11,8 +11,7 @@ const Register = () => {
   console.log({ response, errors });
 
   return (
-    <>
-      <Background />
+    <InfoTemplate>
       {loading ? (
         <Loading />
       ) : (
@@ -28,7 +27,7 @@ const Register = () => {
           </div>
         </article>
       )}
-    </>
+    </InfoTemplate>
   );
 };
 

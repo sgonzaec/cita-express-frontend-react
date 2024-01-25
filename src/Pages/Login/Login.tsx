@@ -1,7 +1,7 @@
 import "./Login.scss";
-import Background from "../../Components/Background/Background";
 import { LoginService } from "../../Services/Login.service";
 import Loading from "../../Components/Loading/Loading";
+import InfoTemplate from "../../Templates/Info.template";
 
 const Login = () => {
   const { loading, register, handleSubmit, errors, onSubmit, response } =
@@ -10,8 +10,7 @@ const Login = () => {
     console.log({response})
 
   return (
-    <>
-      <Background />
+    <InfoTemplate>
       {loading ? (
         <Loading />
       ) : (
@@ -52,7 +51,7 @@ const Login = () => {
           </div>
         </article>
       )}
-    </>
+    </InfoTemplate>
   );
 };
 
