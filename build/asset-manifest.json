@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cita-express-frontend-react/static/css/main.a38bfdf7.css",
-    "main.js": "/cita-express-frontend-react/static/js/main.013c3ba2.js",
+    "main.js": "/cita-express-frontend-react/static/js/main.9a84443d.js",
     "static/js/787.8cb996e1.chunk.js": "/cita-express-frontend-react/static/js/787.8cb996e1.chunk.js",
     "index.html": "/cita-express-frontend-react/index.html",
     "main.a38bfdf7.css.map": "/cita-express-frontend-react/static/css/main.a38bfdf7.css.map",
-    "main.013c3ba2.js.map": "/cita-express-frontend-react/static/js/main.013c3ba2.js.map",
+    "main.9a84443d.js.map": "/cita-express-frontend-react/static/js/main.9a84443d.js.map",
     "787.8cb996e1.chunk.js.map": "/cita-express-frontend-react/static/js/787.8cb996e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a38bfdf7.css",
-    "static/js/main.013c3ba2.js"
+    "static/js/main.9a84443d.js"
   ]
 }
