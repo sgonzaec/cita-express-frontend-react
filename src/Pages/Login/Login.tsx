@@ -4,10 +4,8 @@ import Loading from "../../Components/Loading/Loading";
 import InfoTemplate from "../../Templates/Info.template";
 
 const Login = () => {
-  const { loading, register, handleSubmit, errors, onSubmit, response } =
+  const { loading, register, handleSubmit, errors, onSubmit } =
     LoginService();
-
-    console.log({response})
 
   return (
     <InfoTemplate>

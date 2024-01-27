@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { LoginPayload, LoginResponse } from "../Typings/Login";
+import { LoginPayload } from "../Typings/Login";
 import { citaExpressClient } from "../Clients";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
 
 interface LoginServiceResult {
   loading: boolean;
@@ -10,12 +11,12 @@ interface LoginServiceResult {
   handleSubmit: any;
   errors: any;
   onSubmit: any;
-  response: any;
 }
 
 export const LoginService = (): LoginServiceResult => {
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState<LoginResponse | undefined>();
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -28,9 +29,9 @@ export const LoginService = (): LoginServiceResult => {
       setLoading(true);
 
       const response = await citaExpressClient.login(data);
+      
+      if (response.ok) navigate("/");
 
-      toast.success(`Se inicio sesion correctamente`);
-      setResponse(response);
     } catch (error) {
       toast.error(`Error al intentar iniciar sesión`);
     } finally {
@@ -41,5 +42,5 @@ export const LoginService = (): LoginServiceResult => {
   const onSubmit: SubmitHandler<LoginPayload> = (data: LoginPayload) =>
     tryLogin(data);
 
-  return { loading, register, handleSubmit, errors, onSubmit, response };
+  return { loading, register, handleSubmit, errors, onSubmit };
 };

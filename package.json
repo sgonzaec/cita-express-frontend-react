@@ -2,7 +2,6 @@
   "name": "cita-express-frontend-react",
   "version": "0.1.5",
   "private": true,
-  "homepage": "https://sgonzaec.github.io/cita-express-frontend-react",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -24,6 +23,7 @@
   },
   "scripts": {
     "start": "env-cmd -f .env -e develop react-scripts start",
+    "build": "env-cmd -f .env -e production react-scripts build",
     "build-patch": "npm version patch && env-cmd -f .env -e production react-scripts build && git push",
     "build-minor": "npm version minor && env-cmd -f .env -e production react-scripts build && git push",
     "build-major": "npm version major && env-cmd -f .env -e production react-scripts build && git push",
