@@ -2,6 +2,7 @@ import { useState } from "react";
 import { LoginPayload, LoginResponse } from "../Typings/Login";
 import { citaExpressClient } from "../Clients";
 import { SubmitHandler, useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 
 interface LoginServiceResult {
   loading: boolean;
@@ -28,9 +29,10 @@ export const LoginService = (): LoginServiceResult => {
 
       const response = await citaExpressClient.login(data);
 
+      toast.success(`Se inicio sesion correctamente`);
       setResponse(response);
     } catch (error) {
-      console.error("Error al intentar iniciar sesión:", error);
+      toast.error(`Error al intentar iniciar sesión`);
     } finally {
       setLoading(false);
     }
