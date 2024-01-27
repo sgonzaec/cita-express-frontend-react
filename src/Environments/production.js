@@ -2,5 +2,6 @@
 
 export default {
   name: 'Cita Express',
-  baseURL: ''
+  baseURL: '',
+  ghPageEnv: '/cita-express-frontend-react/'
 };
