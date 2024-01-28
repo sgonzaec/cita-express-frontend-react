@@ -1,6 +1,8 @@
+import Menu from "../../Menu/Menu"
+
 const Header = () => {
   return (
-    <div>Header</div>
+    <div><Menu/></div>
   )
 }
 

@@ -1,0 +1,38 @@
+nav {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    background-color: var(--blue);
+    height: 100vh;
+
+    ul {
+        display: flex;
+        list-style: none;
+        width: 200px;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+            display: flex;
+            width: 100%;
+            list-style: none;
+        }
+
+        a {
+            display: flex;
+            width: 120px;
+            padding: px;
+            background-color: #ffffff;
+            list-style: none;
+            color: #080808;
+            text-decoration: none;
+
+            &:hover {
+                color: rgb(89, 94, 104);
+                width: 150px;
+            }
+        }
+    }
+}

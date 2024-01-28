@@ -1,0 +1,15 @@
+[
+    {
+        "path": "/",
+        "name": "Home"
+    },
+    {
+        "path": "/contactenos",
+        "name": "Contactenos"
+
+    },
+    {
+        "path": "/Aboutus",
+        "name": "Sobre nosotros"
+    }
+]
