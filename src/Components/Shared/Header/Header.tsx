@@ -10,7 +10,7 @@ const Header = () => {
     <header>
       <div className="firstGroup">
         <span className="material-symbols-outlined">menu</span>
-        <img src={Logo} alt="Cita Express Logo" />
+        <Link to={'/'}><img src={Logo} alt="Cita Express Logo" /></Link>
       </div>
       <div className="buttons">
         <ul>
