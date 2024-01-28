@@ -3,12 +3,11 @@ import "./Register.scss";
 import { RegisterService } from "../../Services/Register.service";
 import RegisterForm from "./RegisterForm/RegisterForm";
 import InfoTemplate from "../../Templates/Info.template";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-  const { loading, register, handleSubmit, errors, onSubmit, response } =
+  const { loading, register, handleSubmit, errors, onSubmit } =
     RegisterService();
-
-  console.log({ response, errors });
 
   return (
     <InfoTemplate>
@@ -24,6 +23,9 @@ const Register = () => {
               errors={errors}
               onSubmit={onSubmit}
             />
+            <span className="general-text">
+              ¿Ya tienes cuenta? <Link to={"/"}>Inicia Sesión</Link>
+            </span>
           </div>
         </article>
       )}

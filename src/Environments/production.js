@@ -3,5 +3,6 @@
 export default {
   name: 'Cita Express',
   baseURL: '',
-  ghPageEnv: '/cita-express-frontend-react/'
+  ghPageEnv: '/cita-express-frontend-react/',
+  passCrpto: 'test'
 };

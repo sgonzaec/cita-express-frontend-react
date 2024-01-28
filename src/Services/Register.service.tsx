@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { citaExpressClient } from "../Clients";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { RegisterPayload, RegisterResponse } from "../Typings/Register";
+import { RegisterPayload } from "../Typings/Register";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 interface RegisterServiceResult {
   loading: boolean;
@@ -9,12 +11,12 @@ interface RegisterServiceResult {
   handleSubmit: any;
   errors: any;
   onSubmit: any;
-  response: any;
 }
 
 export const RegisterService = (): RegisterServiceResult => {
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState<RegisterResponse | undefined>();
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -33,9 +35,10 @@ export const RegisterService = (): RegisterServiceResult => {
       
       const response = await citaExpressClient.RegisterUser(body);
 
-      setResponse(response);
+      if (response.ok) navigate("/")
     } catch (error) {
-      console.error("Error al intentar iniciar sesión:", error);
+      toast.error(`Erroe al registrarse`);
+      console.error("Erroe al registrarse:", error);
     } finally {
       setLoading(false);
     }
@@ -44,5 +47,5 @@ export const RegisterService = (): RegisterServiceResult => {
   const onSubmit: SubmitHandler<RegisterPayload> = (data: RegisterPayload) =>
     tryLogin(data);
 
-  return { loading, register, handleSubmit, errors, onSubmit, response };
+  return { loading, register, handleSubmit, errors, onSubmit };
 };
