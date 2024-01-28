@@ -32,8 +32,10 @@ const citaExpressClient = {
         body: JSON.stringify(body),
       }).then((res) => {
         if (res.status >= 200 && res.status < 300) {
+          toast.success(`Registro Exitoso!!`);
           return res.json();
         } else {
+          toast.error(`Error intentando registrar el usuario`);
           return "Error intentando registrar el usuario.";
         }
       });

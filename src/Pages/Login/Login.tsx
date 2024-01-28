@@ -2,10 +2,10 @@ import "./Login.scss";
 import { LoginService } from "../../Services/Login.service";
 import Loading from "../../Components/Loading/Loading";
 import InfoTemplate from "../../Templates/Info.template";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { loading, register, handleSubmit, errors, onSubmit } =
-    LoginService();
+  const { loading, register, handleSubmit, errors, onSubmit } = LoginService();
 
   return (
     <InfoTemplate>
@@ -46,6 +46,9 @@ const Login = () => {
 
               <input type="submit" value="Iniciar Sesion" />
             </form>
+            <span className="general-text">
+              ¿No tienes cuenta? <Link to={"/register"}>Registrate aqui</Link>
+            </span>
           </div>
         </article>
       )}

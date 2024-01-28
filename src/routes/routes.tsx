@@ -4,20 +4,23 @@ import Error from "../Pages/Error/Error";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import environments from "../Environments/environments";
+import { useAuth } from "../Context/AuthContext";
+
+const AuthenticatedRoute: React.FC<{ element: React.ReactNode }> = ({ element }) => {
+  const { isAuthenticated } = useAuth();
+
+  return isAuthenticated ? <>{element}</> : <Login />;
+};
 
 const routerList = createBrowserRouter(
   [
     {
       path: `/`,
-      element: <Home />,
+      element: <AuthenticatedRoute element={<Home />} />,
     },
     {
       path: `/register`,
       element: <Register />,
-    },
-    {
-      path: `/login`,
-      element: <Login />,
     },
     {
       path: "*",
