@@ -25,9 +25,9 @@
   "scripts": {
     "start": "env-cmd -f .env -e develop react-scripts start",
     "build": "env-cmd -f .env -e production react-scripts build",
-    "build-patch": "npm version patch && env-cmd -f .env -e production react-scripts build && git push",
-    "build-minor": "npm version minor && env-cmd -f .env -e production react-scripts build && git push",
-    "build-major": "npm version major && env-cmd -f .env -e production react-scripts build && git push",
+    "build-patch": "npm version patch && env-cmd -f .env -e production react-scripts build && git commit -m 'automatic patch' && git push",
+    "build-minor": "npm version minor && env-cmd -f .env -e production react-scripts build && git commit -m 'automatic minor' && git push",
+    "build-major": "npm version major && env-cmd -f .env -e production react-scripts build && git commit -m 'automatic major' && git push",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
