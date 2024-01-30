@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { LoginPayload, LoginResponse } from "../Typings/Login";
+import { LoginPayload } from "../Typings/Login";
 import { citaExpressClient } from "../Clients";
 import { SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 
 interface LoginServiceResult {
   loading: boolean;
@@ -9,12 +12,13 @@ interface LoginServiceResult {
   handleSubmit: any;
   errors: any;
   onSubmit: any;
-  response: any;
 }
 
 export const LoginService = (): LoginServiceResult => {
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState<LoginResponse | undefined>();
+
+  const navigate = useNavigate();
+  const auth = useAuth();
 
   const {
     register,
@@ -28,8 +32,12 @@ export const LoginService = (): LoginServiceResult => {
 
       const response = await citaExpressClient.login(data);
 
-      setResponse(response);
+      if (response.ok) {
+        auth.login(data.user, data.password);
+        navigate("/");
+      }
     } catch (error) {
+      toast.error(`Error al intentar iniciar sesión`);
       console.error("Error al intentar iniciar sesión:", error);
     } finally {
       setLoading(false);
@@ -39,5 +47,5 @@ export const LoginService = (): LoginServiceResult => {
   const onSubmit: SubmitHandler<LoginPayload> = (data: LoginPayload) =>
     tryLogin(data);
 
-  return { loading, register, handleSubmit, errors, onSubmit, response };
+  return { loading, register, handleSubmit, errors, onSubmit };
 };

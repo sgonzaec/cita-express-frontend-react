@@ -2,7 +2,6 @@ import production from './production';
 import develop from './develop';
 
 let environment = develop;
-console.log(process.env.REACT_APP_NODE_ENV)
 switch (process.env.REACT_APP_NODE_ENV) {
   case 'dev':
     environment = develop;

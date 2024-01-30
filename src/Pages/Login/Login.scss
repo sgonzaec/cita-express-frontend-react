@@ -10,5 +10,15 @@
         .login_title {
             color: white;
         }
+        .general-text {
+            color: white;
+            font-size: 14px;
+            a {
+                color: white;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }

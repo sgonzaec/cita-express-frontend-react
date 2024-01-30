@@ -19,7 +19,17 @@
       margin-top: 0;
     }
     select {
-        color: gray;
+      color: gray;
+    }
+    .general-text {
+      color: white;
+      font-size: 14px;
+      a {
+        color: white;
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }

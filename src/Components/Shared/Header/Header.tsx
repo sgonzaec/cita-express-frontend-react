@@ -1,9 +1,35 @@
-import Menu from "../../Menu/Menu"
+import { Link } from "react-router-dom";
+import Logo from "../../../Logo.svg";
+import "./Header.scss";
+import { useAuth } from "../../../Context/AuthContext";
+import { useState } from "react";
+import Menu from "../../Menu/Menu";
 
 const Header = () => {
-  return (
-    <div><Menu/></div>
-  )
-}
+  const [openMenu, isOpenMenu] = useState<boolean>(false)
+  const auth = useAuth();
 
-export default Header
+  return (
+    <header>
+      {openMenu && <Menu/>}
+      <div className="firstGroup">
+        <span className="material-symbols-outlined" onClick={()=>isOpenMenu(!openMenu)} >menu</span>
+        <img src={Logo} alt="Cita Express Logo" />
+      </div>
+      <div className="buttons">
+        <ul>
+          <li>
+            <Link to={"/profile"}>
+              <span className="material-symbols-outlined">person</span>Perfil
+            </Link>
+          </li>
+          <li onClick={auth.logout}>
+            <span className="material-symbols-outlined">exit_to_app</span>Salir
+          </li>
+        </ul>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

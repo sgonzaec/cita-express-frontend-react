@@ -1,0 +1,39 @@
+header {
+  padding: 1em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  display: flex;
+  justify-content: space-between;
+  .firstGroup {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    span {
+      font-size: 2.5em;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    img {
+      width: 10em;
+    }
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    padding: 0;
+    li,
+    li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
