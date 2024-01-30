@@ -11,9 +11,9 @@ const Header = () => {
 
   return (
     <header>
-      {openMenu && <Menu/>}
+      {openMenu && <Menu />}
       <div className="firstGroup">
-        <span className="material-symbols-outlined" onClick={()=>isOpenMenu(!openMenu)} >menu</span>
+        <span className="material-symbols-outlined" onClick={() => isOpenMenu(!openMenu)} >{openMenu ? "close" : "menu"}</span>
         <img src={Logo} alt="Cita Express Logo" />
       </div>
       <div className="buttons">

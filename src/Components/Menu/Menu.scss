@@ -1,23 +1,25 @@
-nav {
-    position: fixed;
-    top: 0;
-    height: 100vh;
+nav#menu{
+    position: absolute;
+    top: 5.5em;
+    left: 0;
+    height: 85vh;
     width: 180px;
     display: flex;
     flex-direction: column;
     background-color: #566573;
-    box-shadow: 0px 10px 14px #1C2833;
-
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    
+    hr{
+        width: 10em;
+    }
     .title {
         h2 {
-            color: #1C2833;
+            color: #F0F3F4;
             text-align: center;
             width: 100%;
 
         }
-        hr{
-            width: 160px;
-        }
+
     }
 
     .menuList {
@@ -30,6 +32,7 @@ nav {
             width: 85%;
             padding-left: 0;
             list-style: none;
+            flex-direction: column;
 
             li {
                 padding: 5px;

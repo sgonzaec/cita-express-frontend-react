@@ -3,7 +3,7 @@ import "./Menu.scss"
 
 const Menu = () => {
   return (
-    <nav>
+    <nav id="menu">
       <div className="title">
         <h2>Menú</h2>
         <hr />
