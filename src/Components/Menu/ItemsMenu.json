@@ -4,12 +4,20 @@
         "name": "Home"
     },
     {
-        "path": "/contactenos",
-        "name": "Contactenos"
+        "path": "/ejemplo",
+        "name": "ejemplo"
 
     },
     {
-        "path": "/Aboutus",
-        "name": "Sobre nosotros"
+        "path": "/ejemplo",
+        "name": "ejemplo"
+    },
+    {
+        "path": "/ejemplo",
+        "name": "ejemplo"
+    },
+    {
+        "path": "/ejemplo",
+        "name": "ejemplo"
     }
 ]
