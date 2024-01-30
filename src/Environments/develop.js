@@ -2,7 +2,7 @@
 
 export default {
   name: 'Cita Express QA',
-  baseURL: 'http://127.0.0.1:5000',
+  baseURL: 'https://cita-express-backend-python.onrender.com',
   ghPageEnv: '/',
   passCrpto: 'test'
 };
