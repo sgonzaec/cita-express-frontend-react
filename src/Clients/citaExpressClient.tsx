@@ -43,6 +43,27 @@ const citaExpressClient = {
       throw new Error()
     }
   },
+
+  getUserData:async (email:string) => {
+    try {
+      return await fetch(`${environments.baseURL}/api/clients?user=${email}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) => {
+        if (res.status >= 200 && res.status < 300) {
+          toast.success(`Información obtenida correctamente`);
+          return res.json();
+        } else {
+          toast.error(`Error intentando obetener la información del perfil`);
+          return "Error intentando obetener la información del perfil.";
+        }
+      });
+    } catch (error) {
+      throw new Error()
+    }
+  }
 };
 
 export default citaExpressClient;

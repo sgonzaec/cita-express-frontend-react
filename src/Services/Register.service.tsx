@@ -37,8 +37,8 @@ export const RegisterService = (): RegisterServiceResult => {
 
       if (response.ok) navigate("/")
     } catch (error) {
-      toast.error(`Erroe al registrarse`);
-      console.error("Erroe al registrarse:", error);
+      toast.error(`Error al registrarse`);
+      console.error("Error al registrarse:", error);
     } finally {
       setLoading(false);
     }

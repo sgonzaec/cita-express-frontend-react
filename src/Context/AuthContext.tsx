@@ -12,6 +12,7 @@ interface AuthContextProps {
   isAuthenticated: boolean;
   login: (user: string, password: string) => void;
   logout: () => void;
+  userEmail: string;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -20,6 +21,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userEmail, setUserEmail] = useState(""); //poner valor por defecto guardado con cookie
 
   const TOKEN_KEY: string = "authToken";
   const EXPIRATION_KEY: string = "tokenExpiration";
@@ -54,17 +56,19 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     const tokenExpirationMs = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours
     localStorage.setItem(TOKEN_KEY, authToken);
     localStorage.setItem(EXPIRATION_KEY, tokenExpirationMs.toString());
+    setUserEmail(user);
     setIsAuthenticated(true);
   };
 
   const logout = () => {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(EXPIRATION_KEY);
+    setUserEmail("");
     setIsAuthenticated(false);
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, userEmail }}>
       {children}
     </AuthContext.Provider>
   );

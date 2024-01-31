@@ -1,0 +1,40 @@
+.profile {
+  display: flex;
+  margin-top: 3em;
+  .rigth-section {
+    width: 30%;
+    text-align: center;
+    picture {
+      position: relative;
+      img {
+        width: 10em;
+        padding: 0.2em;
+        border: 2px solid;
+        border-radius: 100%;
+      }
+    }
+    .card {
+      position: relative;
+      label {
+        text-align: left;
+        width: 100%;
+        display: inline-block;
+      }
+      span.material-symbols-outlined {
+        right: 15px;
+        font-size: 35px;
+      }
+    }
+    span.material-symbols-outlined {
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+      &:hover {
+        color: var(--dark-blue);
+      }
+    }
+  }
+  .left-section {
+    width: 70%;
+  }
+}
