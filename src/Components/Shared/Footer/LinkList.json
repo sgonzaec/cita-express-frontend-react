@@ -1,0 +1,53 @@
+{
+    "services": {
+        "title": "Servicios CitaExpress",
+        "list": [
+            {
+                "name": "Ejemplo",
+                "path": "#"
+            },
+            {
+                "name": "Cita",
+                "path": "#"
+            },
+            {
+                "name": "Express",
+                "path":"#"
+            }
+        ]
+    },
+    "aboutUs": {
+        "title": "Sobre Nosotros",
+        "list": [
+            {
+                "name": "Ejemplo",
+                "path": "#"
+            },
+            {
+                "name": "Cita",
+                "path": "#"
+            },
+            {
+                "name": "Express",
+                "path":"#"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contactanos",
+        "list": [
+            {
+                "name": "Ejemplo",
+                "path": "#"
+            },
+            {
+                "name": "Cita",
+                "path": "#"
+            },
+            {
+                "name": "Express",
+                "path": "#"
+            }
+        ]
+    }
+}
