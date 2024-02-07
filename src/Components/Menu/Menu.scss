@@ -1,4 +1,4 @@
-nav#menu{
+nav#menu {
     position: absolute;
     top: 5.5em;
     left: 0;
@@ -7,13 +7,17 @@ nav#menu{
     display: flex;
     flex-direction: column;
     background-color: #181a1c;
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-    animation: ola ;
+    box-shadow: rgba(215, 224, 233, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+animation-name: animatedMeu;
+animation-duration: 1s;
+transition: ease-in-out;
 
 
-    hr{
+
+    hr {
         width: 10em;
     }
+
     .title {
         h2 {
             color: #F0F3F4;
@@ -56,11 +60,12 @@ nav#menu{
 
 }
 
-@keyframes meu{
+@keyframes animatedMeu{
     0%{
-transform: scaleX(-180px);
+transform: translateX(-100%);
     }
     100%{
-        transform: scaleX(0px);
+        transform: translateX(0%);
     }
+
 }
