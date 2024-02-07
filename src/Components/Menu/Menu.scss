@@ -6,9 +6,11 @@ nav#menu{
     width: 180px;
     display: flex;
     flex-direction: column;
-    background-color: #566573;
+    background-color: #181a1c;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-    
+    animation: ola ;
+
+
     hr{
         width: 10em;
     }
@@ -45,11 +47,20 @@ nav#menu{
                 &:hover {
                     color: #1C2833;
                     border-radius: 8px;
-                    background-color: #1C2833;
+                    background-color: #464748;
                     opacity: .9;
                 }
             }
         }
     }
 
+}
+
+@keyframes meu{
+    0%{
+transform: scaleX(-180px);
+    }
+    100%{
+        transform: scaleX(0px);
+    }
 }
