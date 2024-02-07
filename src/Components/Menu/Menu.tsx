@@ -11,7 +11,7 @@ const Menu = () => {
       <div className="menuList">
         <ul>
           {ItemsMenu.map((item, index) => {
-            return <li key={index}><a href={item.path}>{item.name}</a></li>
+            return<a href={item.path}> <li key={index}>{item.name}</li></a>
           })}
         </ul>
       </div>

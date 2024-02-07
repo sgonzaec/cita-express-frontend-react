@@ -6,11 +6,12 @@ nav#menu {
     width: 180px;
     display: flex;
     flex-direction: column;
-    background-color: #181a1c;
+    background-color: var(--black);
     box-shadow: rgba(215, 224, 233, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-animation-name: animatedMeu;
-animation-duration: 1s;
-transition: ease-in-out;
+    animation-name: animatedMeu;
+    animation-duration: 1s;
+    transition: ease-in-out;
+    z-index: 1;
 
 
 
@@ -20,7 +21,7 @@ transition: ease-in-out;
 
     .title {
         h2 {
-            color: #F0F3F4;
+            color: var(--white);
             text-align: center;
             width: 100%;
 
@@ -40,31 +41,37 @@ transition: ease-in-out;
             list-style: none;
             flex-direction: column;
 
-            li {
-                padding: 5px;
+            a {
+                text-decoration: none;
+                color: var(--white);
 
-                a {
-                    text-decoration: none;
-                    color: #F0F3F4;
+
+
+                li {
+                    padding: 5px;
+                    color: var(--white);
+
+                    &:hover {
+                        color: var(--gray);
+                        border-radius: 8px;
+                        background-color: var(--white);
+                        opacity: .9;
+                    }
                 }
 
-                &:hover {
-                    color: #1C2833;
-                    border-radius: 8px;
-                    background-color: #464748;
-                    opacity: .9;
-                }
+
             }
         }
     }
 
 }
 
-@keyframes animatedMeu{
-    0%{
-transform: translateX(-100%);
+@keyframes animatedMeu {
+    0% {
+        transform: translateX(-100%);
     }
-    100%{
+
+    100% {
         transform: translateX(0%);
     }
 
