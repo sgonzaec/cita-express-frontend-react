@@ -1,0 +1,71 @@
+nav#menu {
+    position: absolute;
+    top: 5.5em;
+    left: 0;
+    height: 85vh;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    background-color: #181a1c;
+    box-shadow: rgba(215, 224, 233, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+animation-name: animatedMeu;
+animation-duration: 1s;
+transition: ease-in-out;
+
+
+
+    hr {
+        width: 10em;
+    }
+
+    .title {
+        h2 {
+            color: #F0F3F4;
+            text-align: center;
+            width: 100%;
+
+        }
+
+    }
+
+    .menuList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        ul {
+            width: 85%;
+            padding-left: 0;
+            list-style: none;
+            flex-direction: column;
+
+            li {
+                padding: 5px;
+
+                a {
+                    text-decoration: none;
+                    color: #F0F3F4;
+                }
+
+                &:hover {
+                    color: #1C2833;
+                    border-radius: 8px;
+                    background-color: #464748;
+                    opacity: .9;
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes animatedMeu{
+    0%{
+transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+
+}
