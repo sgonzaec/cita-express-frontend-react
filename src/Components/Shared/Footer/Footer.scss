@@ -1,24 +1,33 @@
-footer{
-    background-color:#181a1c;
-    color:  #F0F3F4;
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    position: relative;
+    padding: 30px;
+
+#columns{
     display: flex;
     justify-content: space-around;
-    position: relative;
-    padding: 40px;
-   
 
-    li{
-        background-color:none;
-        padding: 5px;
-        margin: 3px;
-        
-        &:hover{
-            background-color:#464748;
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            background-color: none;
+            padding: 5px;
+            margin: 3px;
+
+            &:hover {
+                background-color: var(--gray);
+                cursor: pointer;
+            }
         }
     }
-    ul{
-    list-style: none;
-    // font-size: center;
-    // position: center;
+}
+    
+#copyright{
+        padding-top: 2em;
+        text-align: center;
     }
 }
+
