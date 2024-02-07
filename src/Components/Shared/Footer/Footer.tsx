@@ -1,7 +1,52 @@
+import LinkList from './LinkList.json'
+import './Footer.scss'
+
+
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+      <div id='columns'>
+        <div>
+          <p>
+            <strong>{LinkList.services.title}</strong>
+          </p>
+          <ul>
+            {LinkList.services.list.map((service) => {
+              return <li>{service.name}</li>
+            })}
+          </ul>
+        </div>
+        <div>
+          <p>
+            <strong>{LinkList.aboutUs.title}</strong>
+          </p>
+          <ul>
+            {LinkList.aboutUs.list.map((item) => {
+              return <li>{item.name}</li>
+            })}
+          </ul>
+        </div>
+        <div>
+          <p>
+            <strong>{LinkList.contact.title}</strong>
+          </p>
+          <ul>
+            {LinkList.contact.list.map((item) => {
+              return <li>{item.name}</li>
+            })}
+          </ul>
+        </div>
+      </div>
+      <div id="copyright">
+
+        <span>{new Date().getFullYear()}</span> &copy; Copyright CitaExpress.
+
+      </div>
+    </footer>
   )
 }
 
-export default Footer
+
+
+
+export default Footer 
