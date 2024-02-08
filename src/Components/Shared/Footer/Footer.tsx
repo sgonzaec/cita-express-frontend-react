@@ -1,52 +1,65 @@
-import LinkList from './LinkList.json'
-import './Footer.scss'
-
+import LinkList from "./LinkList.json";
+import "./Footer.scss";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer>
-      <div id='columns'>
+      <div id="columns">
         <div>
           <p>
-            <strong>{LinkList.services.title}</strong>
+            <strong key={LinkList.services.title}>
+              {LinkList.services.title}
+            </strong>
           </p>
           <ul>
-            {LinkList.services.list.map((service) => {
-              return <li>{service.name}</li>
+            {LinkList.services.list.map((item, index) => {
+              return (
+                <Link to={item.path} key={index}>
+                  <li>{item.name}</li>
+                </Link>
+              );
             })}
           </ul>
         </div>
         <div>
           <p>
-            <strong>{LinkList.aboutUs.title}</strong>
+            <strong key={LinkList.aboutUs.title}>
+              {LinkList.aboutUs.title}
+            </strong>
           </p>
           <ul>
-            {LinkList.aboutUs.list.map((item) => {
-              return <li>{item.name}</li>
+            {LinkList.aboutUs.list.map((item, index) => {
+              return (
+                <Link to={item.path} key={index}>
+                  <li>{item.name}</li>
+                </Link>
+              );
             })}
           </ul>
         </div>
         <div>
           <p>
-            <strong>{LinkList.contact.title}</strong>
+            <strong key={LinkList.contact.title}>
+              {LinkList.contact.title}
+            </strong>
           </p>
           <ul>
-            {LinkList.contact.list.map((item) => {
-              return <li>{item.name}</li>
+            {LinkList.contact.list.map((item, index) => {
+              return (
+                <Link to={item.path} key={index}>
+                  <li>{item.name}</li>
+                </Link>
+              );
             })}
           </ul>
         </div>
       </div>
       <div id="copyright">
-
         <span>{new Date().getFullYear()}</span> &copy; Copyright CitaExpress.
-
       </div>
     </footer>
-  )
-}
+  );
+};
 
-
-
-
-export default Footer 
+export default Footer;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import ItemsMenu from "./ItemsMenu.json"
 import "./Menu.scss"
 
@@ -11,7 +12,7 @@ const Menu = () => {
       <div className="menuList">
         <ul>
           {ItemsMenu.map((item, index) => {
-            return<a href={item.path}> <li key={index}>{item.name}</li></a>
+            return<Link to={item.path} key={index}> <li>{item.name}</li></Link>
           })}
         </ul>
       </div>
