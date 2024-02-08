@@ -1,0 +1,33 @@
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    position: relative;
+    padding: 30px;
+
+#columns{
+    display: flex;
+    justify-content: space-around;
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            background-color: none;
+            padding: 5px;
+            margin: 3px;
+
+            &:hover {
+                background-color: var(--gray);
+                cursor: pointer;
+            }
+        }
+    }
+}
+    
+#copyright{
+        padding-top: 2em;
+        text-align: center;
+    }
+}
+
