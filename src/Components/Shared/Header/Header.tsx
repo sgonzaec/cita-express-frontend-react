@@ -2,12 +2,20 @@ import { Link } from "react-router-dom";
 import Logo from "../../../Logo.svg";
 import "./Header.scss";
 import { useAuth } from "../../../Context/AuthContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "../../Menu/Menu";
 
 const Header = () => {
   const [openMenu, isOpenMenu] = useState<boolean>(false)
   const auth = useAuth();
+
+  useEffect(() => {
+    if (openMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [openMenu])
 
   return (
     <header>
