@@ -14,22 +14,25 @@ const Profile = () => {
         <Loading />
       ) : (
         <section className="profile">
-          <div className="rigth-section">
+          <section className="rigth-section">
             <picture>
               <img src={DummyImage} alt="profile" />
               <span className="material-symbols-outlined">edit</span>
             </picture>
             <div className="card">
               <span className="material-symbols-outlined">edit_note</span>
-
               <h3>Tu información</h3>
               <UserDataList response={response} />
-
             </div>
-          </div>
-          <div className="card left-section">
-            <h2>Tus Servicios</h2>
-          </div>
+          </section>
+          <section className="left-section">
+            <div className="card">
+              <h2>Tus Servicios</h2>
+            </div>
+            <div className="card">
+              <h2>Servicios contratados</h2>
+            </div>
+          </section>
         </section>
       )}
     </MainTemplate>

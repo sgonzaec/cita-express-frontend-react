@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { citaExpressClient } from "../Clients";
 import toast from "react-hot-toast";
 import { useAuth } from "../Context/AuthContext";
@@ -26,6 +26,7 @@ const defaultData: ClientResponse = {
 
 export const ProfileService = (): ProfileServiceResult => {
   const [loading, setLoading] = useState(false);
+  const [userEmail, ] = useState(localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : null);
   const [response, setResponse] = useState<ClientResponse>(defaultData);
 
   const auth = useAuth();
@@ -33,10 +34,7 @@ export const ProfileService = (): ProfileServiceResult => {
   const getDataUser = async (data: string) => {
     try {
       setLoading(true);
-
-      const response: ClientResponse = await citaExpressClient.getUserData(
-        data
-      );
+      const response: ClientResponse = await citaExpressClient.getUserData(data);
       setResponse(response);
     } catch (error) {
       toast.error(`Error intentando obetener la información del perfil`);
@@ -49,9 +47,14 @@ export const ProfileService = (): ProfileServiceResult => {
     }
   };
 
-  useMemo(() => {
-    getDataUser(auth.userEmail);
-  }, [auth.userEmail]);
+  useEffect(() => {
+    if (userEmail && userEmail !== response.client.email) {
+      getDataUser(userEmail);
+    } else if (!userEmail) {
+      auth.logout();
+    }
+    // eslint-disable-next-line
+  }, [auth, userEmail]);
 
   return { loading, response };
 };
