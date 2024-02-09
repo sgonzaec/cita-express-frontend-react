@@ -5,7 +5,7 @@ const Home = () => {
     <MainTemplate>
       <div className="homeContainer">
         <div>
-          <h2>cita Express</h2>
+
         </div>
         <div className="left">
           <div className="appointmentBox">
@@ -14,13 +14,13 @@ const Home = () => {
             <div>
               <ul>
                 <li>
-                  <button></button>
+                  <button id="confirm">Confirmar</button>
                 </li>
                 <li>
-                  <button></button>
+                  <button id="modify">Modificar</button>
                 </li>
                 <li>
-                  <button></button>
+                  <button id="cancel">Cancelar</button>
                 </li>
               </ul>
             </div>

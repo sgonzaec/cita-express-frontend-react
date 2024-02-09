@@ -23,6 +23,38 @@ div.homeContainer {
             justify-content: flex-end;
             list-style: none;
             gap: 1em;
+            button{
+                padding: 8px;
+                color: black;
+                background-color: white;
+            }
+            
+            button#confirm{
+
+                border: 1px solid #4eda53;
+                &:hover{
+                    background-color: #4eda53 ;
+                    color: white;
+                }
+
+            }
+            button#modify{
+
+                border: 1px solid #F7DC6F;
+                &:hover{
+                    background-color: #F7DC6F ;
+                    color: white;
+                }
+            }
+            button#cancel{
+
+                border: 1px solid red;
+                &:hover{
+                    background-color: red ;
+                    color: white;
+                }
+            }
+        
         }
 
     }
