@@ -1,12 +1,32 @@
-div.homeContainer{
-background-color: #F7F8F7;
-display: flex;
+div.homeContainer {
+    background-color: #F7F8F7;
+    display: flex;
 
+    div.left,
+    div.right {
+        flex: 1;
+    }
 
-div.appointmentBox{
-    border: 10px solid red;
+    div.appointmentBox {
+        width: 29em;
+        height: 10%;
 
-}
+        div.box {
+
+            height: 13em;
+            border: 10px solid red;
+
+        }
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 1em;
+        }
+
+    }
+
 
 
 
