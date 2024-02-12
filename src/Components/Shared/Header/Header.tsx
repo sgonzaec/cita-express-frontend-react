@@ -2,15 +2,19 @@ import { Link } from "react-router-dom";
 import Logo from "../../../Logo.svg";
 import "./Header.scss";
 import { useAuth } from "../../../Context/AuthContext";
+import { useState } from "react";
+import Menu from "../../Menu/Menu";
 
 const Header = () => {
+  const [openMenu, isOpenMenu] = useState<boolean>(false)
   const auth = useAuth();
 
   return (
     <header>
+      {openMenu && <Menu />}
       <div className="firstGroup">
-        <span className="material-symbols-outlined">menu</span>
-        <Link to={'/'}><img src={Logo} alt="Cita Express Logo" /></Link>
+        <span className="material-symbols-outlined" onClick={() => isOpenMenu(!openMenu)} >{openMenu ? "close" : "menu"}</span>
+        <img src={Logo} alt="Cita Express Logo" />
       </div>
       <div className="buttons">
         <ul>
