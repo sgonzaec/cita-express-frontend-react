@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../../../Logo.svg";
+import Logo from "../../../Assets/Logo_recortado.png";
 import "./Header.scss";
 import { useAuth } from "../../../Context/AuthContext";
 import { useEffect, useState } from "react";

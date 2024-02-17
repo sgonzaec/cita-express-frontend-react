@@ -63,6 +63,28 @@ const citaExpressClient = {
     } catch (error) {
       throw new Error()
     }
+  },
+
+  updateClient: async (body: any) => {
+    try {
+      return await fetch(`${environments.baseURL}/api/clients/updateUserData`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }).then((res) => {
+        if (res.status >= 200 && res.status < 300) {
+          toast.success(`Se actualizó la información correctamente.`);
+          return res.json();
+        } else {
+          toast.error(`Error actualizando la información`);
+          return "Error actualizando la información.";
+        }
+      });
+    } catch (error) {
+      throw new Error()
+    }
   }
 };
 
