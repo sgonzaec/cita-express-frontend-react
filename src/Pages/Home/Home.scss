@@ -1,0 +1,99 @@
+div.homeContainer {
+    background-color: #F7F8F7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.container {
+        width: 60em;
+        margin: 50px;
+        h2{
+            text-align: center;
+        }
+    }
+p{text-align: justify;}
+    div.content {
+        display: flex;
+        width: 90vw;
+    }
+
+    div.left,
+    div.right {
+        flex: 1;
+    }
+    div.left{
+        display: flex;
+        justify-content: center;
+    }
+
+    div.appointmentBox {
+        width: 29em;
+        height: 10%;
+        background-color: white;
+
+        div.box {
+            background-color: white;
+            height: 13em;
+            border: 5px solid #464444;
+            border-radius: 18px;
+            box-shadow: 4px 7px 15px -3px rgba(0,0,0,0.75);
+
+
+        }
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 1em;
+
+            button {
+                padding: 8px;
+                color: var(--black);
+                background-color: white;
+            }
+
+            button#confirm {
+
+                border: 1px solid var(--green);
+
+                &:hover {
+                    background-color: var(--green);
+                    color: white;
+                }
+
+            }
+
+            button#modify {
+
+                border: 1px solid #F7DC6F;
+
+                &:hover {
+                    background-color: #FAFA33;
+                    color: white;
+                }
+            }
+
+            button#cancel {
+
+                border: 1px solid var(--redcherry);
+
+                &:hover {
+                    background-color: var(--redcherry);
+                    color: white;
+                }
+            }
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+}
