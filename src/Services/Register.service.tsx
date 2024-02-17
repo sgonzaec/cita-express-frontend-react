@@ -30,7 +30,7 @@ export const RegisterService = (): RegisterServiceResult => {
       const body: RegisterPayload = {
         user: data.user,
         password: data.password,
-        user_type: (data.user_type)
+        user_type: 2
       }
       
       const response = await citaExpressClient.RegisterUser(body);

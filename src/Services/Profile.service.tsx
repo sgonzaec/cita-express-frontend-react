@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import { citaExpressClient } from "../Clients";
 import toast from "react-hot-toast";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useAuth } from "../Context/AuthContext";
 import { ClientResponse } from "../Typings/Client";
 
 interface ProfileServiceResult {
   loading: boolean;
   response: ClientResponse;
+  isOpenModal: any;
+  openModal: any;
+  onSubmit: any;
+  handleSubmit: any;
+  register: any;
 }
 
 const defaultData: ClientResponse = {
@@ -26,10 +32,25 @@ const defaultData: ClientResponse = {
 
 export const ProfileService = (): ProfileServiceResult => {
   const [loading, setLoading] = useState(false);
+  const [openModal, isOpenModal] = useState(false);
   const [userEmail, ] = useState(localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : null);
   const [response, setResponse] = useState<ClientResponse>(defaultData);
 
+  const {
+    register,
+    handleSubmit,
+  } = useForm<any>();
+
   const auth = useAuth();
+
+  useEffect(() => {
+    if (userEmail && userEmail !== response.client.email) {
+      getDataUser(userEmail);
+    } else if (!userEmail) {
+      auth.logout();
+    }
+    // eslint-disable-next-line
+  }, [auth, userEmail]);
 
   const getDataUser = async (data: string) => {
     try {
@@ -47,14 +68,10 @@ export const ProfileService = (): ProfileServiceResult => {
     }
   };
 
-  useEffect(() => {
-    if (userEmail && userEmail !== response.client.email) {
-      getDataUser(userEmail);
-    } else if (!userEmail) {
-      auth.logout();
-    }
-    // eslint-disable-next-line
-  }, [auth, userEmail]);
+  const onSubmit: SubmitHandler<any> = (data: any) => {
+    citaExpressClient.updateClient(data)
+    isOpenModal(false)
+  }
 
-  return { loading, response };
+  return { loading, response, isOpenModal, openModal, onSubmit, handleSubmit, register };
 };
