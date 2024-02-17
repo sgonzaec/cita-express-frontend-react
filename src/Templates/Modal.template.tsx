@@ -8,5 +8,3 @@ const ModalTemplate = ({ children }: any) => {
 };
 
 export default ModalTemplate;
-//Use state buscar que es y como se aplica.
-//ventana modal 
