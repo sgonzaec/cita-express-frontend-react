@@ -1,37 +1,8 @@
-import { useMemo } from "react";
 import Table from "../../Components/Table/Table";
 import MainTemplate from "../../Templates/Main.template"
 import "./Home.scss";
 
 const Home = () => {
-
-  const columns = useMemo(
-    ()=>[
-      {
-        accessorKey: "supplierName",
-        header: "Nombre"
-      },
-      {
-        accessorKey: "date",
-        header: "Fecha"
-      },
-      {
-        accessorKey: "work",
-        header: "Trabajo"
-      }
-    ], 
-    []
-  )
-
-  const data = [
-    
-    {
-      supplierName: 'Sancho Panza',
-      date: '01/04/25',
-      work: 'carpintero'
-    } 
-  ] 
-
 
   return (
     <MainTemplate>
