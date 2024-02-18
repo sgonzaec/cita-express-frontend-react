@@ -1,4 +1,4 @@
-import Table from "../../Components/Table/Table";
+import Tables from "../../Components/Table/Tables";
 import MainTemplate from "../../Templates/Main.template"
 import "./Home.scss";
 
@@ -15,7 +15,7 @@ const Home = () => {
           <div className="left">
             <div className="appointmentBox">
               <div className="box">
-                <Table/>
+                <Tables/>
               </div>
               <div>
                 <ul>
