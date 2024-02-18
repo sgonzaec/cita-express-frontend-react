@@ -8,11 +8,14 @@ import { ClientResponse } from "../Typings/Client";
 interface ProfileServiceResult {
   loading: boolean;
   response: ClientResponse;
-  isOpenModal: any;
-  openModal: any;
+  isOpenModalData: any;
+  openModalData: boolean;
+  openModalImage: boolean;
+  isOpenModalImage: any;
   onSubmit: any;
   handleSubmit: any;
   register: any;
+  onSubmitImage: any;
 }
 
 const defaultData: ClientResponse = {
@@ -32,7 +35,8 @@ const defaultData: ClientResponse = {
 
 export const ProfileService = (): ProfileServiceResult => {
   const [loading, setLoading] = useState(false);
-  const [openModal, isOpenModal] = useState(false);
+  const [openModalImage, isOpenModalImage] = useState(false);
+  const [openModalData, isOpenModalData] = useState(false);
   const [userEmail, ] = useState(localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : null);
   const [response, setResponse] = useState<ClientResponse>(defaultData);
 
@@ -70,8 +74,25 @@ export const ProfileService = (): ProfileServiceResult => {
 
   const onSubmit: SubmitHandler<any> = (data: any) => {
     citaExpressClient.updateClient(data)
-    isOpenModal(false)
+    isOpenModalData(false)
   }
 
-  return { loading, response, isOpenModal, openModal, onSubmit, handleSubmit, register };
+  const onSubmitImage = async (data: any) => {
+    const formData = new FormData();
+    formData.append('image', data.image[0]);
+    formData.append('user', "test@test.com");
+
+    fetch("http://127.0.0.1:5000/api/clients/updateImage", {
+      method: "POST",
+      headers: {
+        // "Content-Type": "multipart/form-data",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: formData,
+    })
+      .then((r) => r.json())
+      .then((e) => console.log(e));
+  };
+
+  return { loading, response, openModalData, isOpenModalData, openModalImage, isOpenModalImage, onSubmit, handleSubmit, register, onSubmitImage };
 };
