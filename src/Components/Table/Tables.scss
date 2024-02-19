@@ -2,12 +2,20 @@ table {
     width: 100%;
     height: 100%;
     border-collapse: collapse;
-    border: 1px solid black;
+
     border-radius: 10px;
+    tr.infoData:hover{
+        background-color: #DCDCDC;
+        border-radius: 10px;
+    }
     td{
         font-size: .9em;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+        border-top: 2px solid #D1CFC4;
+        border-bottom: 2px solid #D1CFC4;
+
+        p{
+            text-align: center;
+        }
         
     }
 }
