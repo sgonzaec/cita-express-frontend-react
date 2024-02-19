@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { citaExpressClient } from "../Clients";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { RegisterPayload } from "../Typings/Register";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import citaExpressAuth from "../Clients/citaExpressAuth";
 
 interface RegisterServiceResult {
   loading: boolean;
@@ -33,7 +33,7 @@ export const RegisterService = (): RegisterServiceResult => {
         user_type: 2
       }
       
-      const response = await citaExpressClient.RegisterUser(body);
+      const response = await citaExpressAuth.RegisterUser(body);
 
       if (response.ok) navigate("/")
     } catch (error) {

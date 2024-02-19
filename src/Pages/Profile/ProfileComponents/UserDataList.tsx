@@ -1,13 +1,13 @@
 import { ClientResponse } from "../../../Typings/Client";
 
 const UserDataList = ({
-  openModal,
+  openModalData,
   response,
   onSubmit,
   handleSubmit, 
   register
 }: {
-  openModal?: boolean
+  openModalData?: boolean
   response: ClientResponse;
   onSubmit?: any;
   handleSubmit: any;
@@ -23,7 +23,7 @@ const UserDataList = ({
           {...register("name")}
           defaultValue={response.client.name}
           placeholder={response.client.name}
-          disabled={!openModal ? true : false}
+          disabled={!openModalData ? true : false}
         />
 
         <label htmlFor="lastname">Apellido</label>
@@ -33,7 +33,7 @@ const UserDataList = ({
           {...register("lastname")}
           defaultValue={response.client.lastname}
           placeholder={response.client.lastname}
-          disabled={!openModal ? true : false}
+          disabled={!openModalData ? true : false}
         />
 
         <label htmlFor="email">Correo Electronico</label>
@@ -43,7 +43,7 @@ const UserDataList = ({
           {...register("email")}
           defaultValue={response.client.email}
           placeholder={response.client.email}
-          disabled={!openModal ? true : false}
+          disabled={!openModalData ? true : false}
         />
 
         <label htmlFor="phone">Telefono</label>
@@ -53,7 +53,7 @@ const UserDataList = ({
           {...register("phone")}
           defaultValue={response.client.phone}
           placeholder={response.client.phone}
-          disabled={!openModal ? true : false}
+          disabled={!openModalData ? true : false}
         />
 
         <label htmlFor="cp">Codigo postal</label>
@@ -63,7 +63,7 @@ const UserDataList = ({
           {...register("cp")}
           defaultValue={response.client.cp}
           placeholder={response.client.cp}
-          disabled={!openModal ? true : false}
+          disabled={!openModalData ? true : false}
         />
 
         <label htmlFor="city">Ciudad</label>
@@ -73,7 +73,7 @@ const UserDataList = ({
           {...register("city")}
           defaultValue={response.client.city}
           placeholder={response.client.city}
-          disabled={!openModal ? true : false}
+          disabled={!openModalData ? true : false}
         />
 
         <label htmlFor="country">Pais</label>
@@ -83,7 +83,7 @@ const UserDataList = ({
           {...register("country")}
           defaultValue={response.client.country}
           placeholder={response.client.country}
-          disabled={!openModal ? true : false}
+          disabled={!openModalData ? true : false}
         />
 
         <label htmlFor="adress">Dirección</label>
@@ -93,10 +93,10 @@ const UserDataList = ({
           {...register("adress")}
           defaultValue={response.client.adress}
           placeholder={response.client.adress}
-          disabled={!openModal ? true : false}
+          disabled={!openModalData ? true : false}
         />
 
-        {openModal && (
+        {openModalData && (
           <input type="submit" value={'Actualizar'} />
         )}
       </form>
