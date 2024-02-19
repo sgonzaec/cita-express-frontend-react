@@ -1,8 +1,11 @@
-
+import '../Styles/Modal.templates.scss'
 const ModalTemplate = ({ children }: any) => {
   return (
-    <div>
+    <div className='ventana'>
+      <div className='contenido'>
+        <span id='cerrar'className="material-symbols-outlined">close</span>
       {children}
+      </div>  
     </div>
   );
 };
