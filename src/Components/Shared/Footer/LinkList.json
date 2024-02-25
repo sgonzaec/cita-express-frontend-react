@@ -20,8 +20,8 @@
         "title": "Sobre Nosotros",
         "list": [
             {
-                "name": "Ejemplo",
-                "path": "#"
+                "name": "Nosotros",
+                "path": "AboutUs"
             },
             {
                 "name": "Cita",
