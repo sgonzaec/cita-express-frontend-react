@@ -32,6 +32,32 @@ div.homeContainer {
         justify-content: center;
     }
 
+    div.boxCircle{
+        display: flex;
+        width: 100%;
+        gap: 15px;
+
+     .brown{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: var(--brown);
+     }
+     .orange{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: var(--orange);
+     }
+     .blue{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: var(--dark-blue);
+     }
+    
+    }
+
     div.appointmentBox {
         width: 29em;
         height: 10%;

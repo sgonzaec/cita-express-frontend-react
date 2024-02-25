@@ -4,18 +4,20 @@ table {
     border-collapse: collapse;
 
     border-radius: 10px;
-    tr.infoData:hover{
+
+    tr.infoData:hover {
         background-color: #DCDCDC;
         border-radius: 10px;
     }
-    td{
+
+    td {
         font-size: .9em;
         border-top: 2px solid #D1CFC4;
         border-bottom: 2px solid #D1CFC4;
 
-        p{
+        p {
             text-align: center;
         }
-        
+
     }
 }
