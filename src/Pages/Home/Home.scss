@@ -38,22 +38,41 @@ div.homeContainer {
         gap: 15px;
 
      .brown{
+        animation: botones 2.5s ease;
         height: 30px;
         width: 30px;
         border-radius: 50%;
         background-color: var(--brown);
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+   
+        }
      }
+     
+     
+     
      .orange{
+        animation: botones 2.5s ease;
         height: 30px;
         width: 30px;
         border-radius: 50%;
         background-color: var(--orange);
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+        }
      }
      .blue{
+        animation: botones 2.5s ease;
         height: 30px;
         width: 30px;
         border-radius: 50%;
         background-color: var(--dark-blue);
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+        }
      }
     
     }
@@ -122,13 +141,15 @@ div.homeContainer {
         }
 
     }
+}
 
-
-
-
-
-
-
-
-
+@keyframes botones{
+    
+    from{
+        transform: translateX(100px);
+        opacity: 0.001;
+    }
+    to{
+       transform: translateX(0px);
+    }
 }

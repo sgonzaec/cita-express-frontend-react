@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Tables from "../../Components/Table/Tables";
 import MainTemplate from "../../Templates/Main.template"
 import "./Home.scss";
+
 
 const Home = () => {
 
@@ -34,7 +36,8 @@ const Home = () => {
           </div>
           <div className="right">
             <div className="boxCircle">
-              <div className="brown"></div>
+              <div className="brown">
+              </div>
               <div className="orange"></div>
               <div className="blue"></div> 
               </div>
