@@ -15,22 +15,32 @@ p{text-align: justify;
     
 div.caja{
         display: flex;
-        width: 140vw;
+        width: 90vw;
+        margin: 50px 0px;
         .left{
+            position: relative;
             width: 100px;
+            font-weight: lighter;
             flex: 1;
             margin: 10px 80px;
             
             .mision{
-                width: 200px;
+                width: 8em;
+                position: relative;
+                left: 150px;
             }
         }
         .rigth{
+            position: relative;
+            left:70px;
+            font-weight: lighter;
             flex: 1;
             margin: 10px 50px;
 
             .vision{
-                width: 200px;
+                width: 8em;
+                position: relative;
+                left:160px;
             }
         }
     
@@ -42,7 +52,7 @@ div.caja{
 .ultimo{
     font-weight: lighter;
     margin: 1em 5em;
-    color: var(--orange);
+    color: var(--black);
 }
 
 
