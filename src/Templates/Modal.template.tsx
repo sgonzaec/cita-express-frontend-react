@@ -1,4 +1,4 @@
-import '../Styles/Modal.templates.scss'
+import '../Styles/ComponetsStyle/Modal.templates.scss'
 const ModalTemplate = ({ children, close}: any) => {
   return (
     <div className='ventana'>
