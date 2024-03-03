@@ -1,6 +1,5 @@
 import ModalTemplate from "../../../Templates/Modal.template";
-import DummyImage from "../../../Assets/dummy-profile.png";
-import { imagesHelpers } from "../../../Helpers/DecodeImage";
+import BinaryToImage from "./BinaryToImage";
 
 const ImageSection = ({
   response,
@@ -9,6 +8,7 @@ const ImageSection = ({
   handleSubmit,
   onSubmitImage,
   register,
+  binaryToImage
 }: {
   response: any;
   isOpenModalImage: any;
@@ -16,18 +16,11 @@ const ImageSection = ({
   handleSubmit: any;
   onSubmitImage: any;
   register: any;
+  binaryToImage: any;
 }) => {
   return (
     <picture>
-      <img
-        style={{ minWidth: "10em", minHeight: "10em" }}
-        src={
-          response.client.image
-            ? imagesHelpers.DecodeImage(response.client.image)
-            : DummyImage
-        }
-        alt="profilePhoto"
-      />
+      <BinaryToImage binaryData={response.client.image} />
       <span
         className="material-symbols-outlined"
         onClick={() => isOpenModalImage(!openModalImage)}

@@ -86,13 +86,13 @@ const UserDataList = ({
           disabled={!openModalData ? true : false}
         />
 
-        <label htmlFor="adress">Dirección</label>
+        <label htmlFor="address">Dirección</label>
         <input
-          name="adress"
+          name="address"
           type="text"
-          {...register("adress")}
-          defaultValue={response.client.adress}
-          placeholder={response.client.adress}
+          {...register("address")}
+          defaultValue={response.client.address}
+          placeholder={response.client.address}
           disabled={!openModalData ? true : false}
         />
 

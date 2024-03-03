@@ -3,8 +3,8 @@
         "title": "Servicios CitaExpress",
         "list": [
             {
-                "name": "Ejemplo",
-                "path": "#"
+                "name": " Nuestros servicios",
+                "path": "/our-services"
             },
             {
                 "name": "Cita",
@@ -21,7 +21,7 @@
         "list": [
             {
                 "name": "Nosotros",
-                "path": "AboutUs"
+                "path": "/about-us"
             },
             {
                 "name": "Cita",

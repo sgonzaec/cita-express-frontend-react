@@ -1,3 +1,22 @@
+.up-image{
+    position: relative;
+    .search-bar{
+        width:50%;
+        position: absolute;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, .4);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .MuiFormControl-root.MuiTextField-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+            width: 100%;
+            .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+                color: var(--white);
+            }
+        }
+    }
+}
+
 div.homeContainer {
     background-color: #F7F8F7;
     display: flex;
@@ -38,22 +57,45 @@ div.homeContainer {
         gap: 15px;
 
      .brown{
+        padding:1em;
+        animation: botones 2.5s ease;
         height: 30px;
         width: 30px;
         border-radius: 50%;
         background-color: var(--brown);
      }
      .orange{
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+   
+        }
+     }
+     .orange{
+        padding:1em;
+        animation: botones 2.5s ease;
         height: 30px;
         width: 30px;
         border-radius: 50%;
         background-color: var(--orange);
      }
      .blue{
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+        }
+     }
+     .blue{
+        padding:1em;
+        animation: botones 2.5s ease;
         height: 30px;
         width: 30px;
         border-radius: 50%;
         background-color: var(--dark-blue);
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+        }
      }
     
     }
@@ -122,13 +164,15 @@ div.homeContainer {
         }
 
     }
+}
 
-
-
-
-
-
-
-
-
+@keyframes botones{
+    
+    from{
+        transform: translateX(100px);
+        opacity: 0.001;
+    }
+    to{
+       transform: translateX(0px);
+    }
 }
