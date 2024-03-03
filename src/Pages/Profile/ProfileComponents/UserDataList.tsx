@@ -43,7 +43,7 @@ const UserDataList = ({
           {...register("email")}
           defaultValue={response.client.email}
           placeholder={response.client.email}
-          disabled={!openModalData ? true : false}
+          disabled={true}
         />
 
         <label htmlFor="phone">Telefono</label>
