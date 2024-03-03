@@ -1,30 +1,31 @@
 import toast from "react-hot-toast";
 import environments from "../Environments/environments";
-import { LoginPayload } from "../Typings/Login";
-import { RegisterPayload } from "../Typings/Register";
 
 const citaExpressClient = {
-  login: async (body: LoginPayload) => {
-    return await fetch(`${environments.baseURL}/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    }).then((res) => {
-      if (res.status >= 200 && res.status < 300) {
-        toast.success(`Se inicio sesion correctamente`);
-        return res.json();
-      } else {
-        toast.error(`Error intentando iniciar sesion`);
-        return "Error intentando iniciar sesion";
-      }
-    });
+  getUserData: async (email: string) => {
+    try {
+      return await fetch(`${environments.baseURL}/api/clients?user=${email}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) => {
+        if (res.status >= 200 && res.status < 300) {
+          toast.success(`Información obtenida correctamente`);
+          return res.json();
+        } else {
+          toast.error(`Error intentando obetener la información del perfil`);
+          return "Error intentando obetener la información del perfil.";
+        }
+      });
+    } catch (error) {
+      throw new Error();
+    }
   },
 
-  RegisterUser: async (body: RegisterPayload) => {
+  updateClient: async (body: any) => {
     try {
-      return await fetch(`${environments.baseURL}/register`, {
+      return await fetch(`${environments.baseURL}/api/clients/updateUserData`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,15 +33,45 @@ const citaExpressClient = {
         body: JSON.stringify(body),
       }).then((res) => {
         if (res.status >= 200 && res.status < 300) {
-          toast.success(`Registro Exitoso!!`);
+          toast.success(`Se actualizó la información correctamente.`);
           return res.json();
         } else {
-          toast.error(`Error intentando registrar el usuario`);
-          return "Error intentando registrar el usuario.";
+          toast.error(`Error actualizando la información`);
+          return "Error actualizando la información.";
         }
       });
     } catch (error) {
-      throw new Error()
+      throw new Error();
+    }
+  },
+
+  updateImage: async (data: any) => {
+    
+    if (!data.image[0] || !localStorage.getItem("userEmail")) return
+
+
+    const formData = new FormData();
+    formData.append("image", data.image[0]);
+    formData.append("user", localStorage.getItem("userEmail")!);
+
+    try {
+      return await fetch(`${environments.baseURL}/api/clients/updateImage`, {
+        method: "POST",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: formData,
+      }).then((res) => {
+        if (res.status >= 200 && res.status < 300) {
+          toast.success(`Se actualizó la imagen correctamente.`);
+          return res.json();
+        } else {
+          toast.error(`Error actualizando la imagen`);
+          return "Error actualizando la imagen.";
+        }
+      });
+    } catch (error) {
+      throw new Error();
     }
   },
 };

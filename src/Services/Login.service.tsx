@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { LoginPayload } from "../Typings/Login";
-import { citaExpressClient } from "../Clients";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
+import citaExpressAuth from "../Clients/citaExpressAuth";
 
 interface LoginServiceResult {
   loading: boolean;
@@ -30,7 +30,7 @@ export const LoginService = (): LoginServiceResult => {
     try {
       setLoading(true);
 
-      const response = await citaExpressClient.login(data);
+      const response = await citaExpressAuth.login(data);
 
       if (response.ok) {
         auth.login(data.user, data.password);

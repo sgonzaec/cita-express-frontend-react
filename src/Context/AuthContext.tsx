@@ -23,6 +23,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 
   const TOKEN_KEY: string = "authToken";
   const EXPIRATION_KEY: string = "tokenExpiration";
+  const USER_EMAIL: string = "userEmail";
 
   const CryptoJS = require("crypto-js");
   const iv = CryptoJS.lib.WordArray.random(16);
@@ -54,12 +55,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     const tokenExpirationMs = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours
     localStorage.setItem(TOKEN_KEY, authToken);
     localStorage.setItem(EXPIRATION_KEY, tokenExpirationMs.toString());
+    localStorage.setItem(USER_EMAIL, user);
     setIsAuthenticated(true);
   };
 
   const logout = () => {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(EXPIRATION_KEY);
+    localStorage.removeItem(USER_EMAIL);
     setIsAuthenticated(false);
   };
 

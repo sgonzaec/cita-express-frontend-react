@@ -55,24 +55,6 @@ const RegisterForm = ({ register, handleSubmit, errors, onSubmit }: any) => {
         />
       </div>
 
-      <div className="input-container">
-        <label htmlFor="user_type">¿Que tipo de usuario eres?</label>
-        <select
-          className={errors.user_type && "input-error"}
-          defaultValue=""
-          {...register("user_type", { required: true })}
-        >
-          <option disabled>
-            --Selecciona una opción--
-          </option>
-          <option value={2}>Cliente</option>
-          <option value={3}>Proveedor</option>
-        </select>
-        {errors.user_type && (
-          <span className="input-error-text">Debes seleccionar una opcion</span>
-        )}
-      </div>
-
       <input type="submit" value="Registarse" className={validationPassword ? '' : 'disabled-buttom'} />
     </form>
   );

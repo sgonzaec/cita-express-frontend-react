@@ -1,12 +1,14 @@
-
-const ModalTemplate = ({ children }: any) => {
+import '../Styles/ComponetsStyle/Modal.templates.scss'
+const ModalTemplate = ({ children, close}: any) => {
   return (
-    <div>
+    <div className='ventana'>
+      <div className='contenido'>
+        <span id='cerrar'className="material-symbols-outlined"  onClick={() => close(false)}>close</span>
+       
       {children}
+      </div>  
     </div>
-  );
+  )
 };
 
 export default ModalTemplate;
-//Use state buscar que es y como se aplica.
-//ventana modal 
