@@ -64,7 +64,7 @@ const Profile = () => {
             </div>
           </section>
           {openModalData && (
-            <ModalTemplate>
+            <ModalTemplate close={isOpenModalData}>
               <h2>Actualizar información</h2>
               <UserDataList
                 response={response}

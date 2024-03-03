@@ -1,3 +1,22 @@
+.up-image{
+    position: relative;
+    .search-bar{
+        width:50%;
+        position: absolute;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, .4);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .MuiFormControl-root.MuiTextField-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+            width: 100%;
+            .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+                color: var(--white);
+            }
+        }
+    }
+}
+
 div.homeContainer {
     background-color: #F7F8F7;
     display: flex;
@@ -7,11 +26,16 @@ div.homeContainer {
     div.container {
         width: 60em;
         margin: 50px;
-        h2{
+
+        h2 {
             text-align: center;
         }
     }
-p{text-align: justify;}
+
+    p {
+        text-align: justify;
+    }
+
     div.content {
         display: flex;
         width: 90vw;
@@ -21,9 +45,55 @@ p{text-align: justify;}
     div.right {
         flex: 1;
     }
-    div.left{
+
+    div.left {
         display: flex;
         justify-content: center;
+    }
+
+    div.boxCircle{
+        display: flex;
+        width: 100%;
+        gap: 15px;
+
+     .brown{
+        padding:1em;
+        animation: botones 2.5s ease;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: var(--brown);
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+   
+        }
+     }
+     .orange{
+        padding:1em;
+        animation: botones 2.5s ease;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: var(--orange);
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+        }
+     }
+     .blue{
+        padding:1em;
+        animation: botones 2.5s ease;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: var(--dark-blue);
+        cursor: pointer;
+        &:hover{
+            scale: 1.2;
+        }
+     }
+    
     }
 
     div.appointmentBox {
@@ -32,11 +102,14 @@ p{text-align: justify;}
         background-color: white;
 
         div.box {
+            position: relative;
+            left: -5em;
+            width: 35em;
             background-color: white;
             height: 13em;
             border: 5px solid #464444;
             border-radius: 18px;
-            box-shadow: 4px 7px 15px -3px rgba(0,0,0,0.75);
+            box-shadow: 4px 7px 15px -3px rgba(0, 0, 0, 0.75);
 
 
         }
@@ -87,13 +160,15 @@ p{text-align: justify;}
         }
 
     }
+}
 
-
-
-
-
-
-
-
-
+@keyframes botones{
+    
+    from{
+        transform: translateX(100px);
+        opacity: 0.001;
+    }
+    to{
+       transform: translateX(0px);
+    }
 }

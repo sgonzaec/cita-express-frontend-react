@@ -6,6 +6,8 @@ import Login from "../Pages/Login/Login";
 import environments from "../Environments/environments";
 import { useAuth } from "../Context/AuthContext";
 import Profile from "../Pages/Profile/Profile";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import OurServices from "../Pages/OurServices/OurServices";
 
 const AuthenticatedRoute: React.FC<{ element: React.ReactNode }> = ({ element }) => {
   const { isAuthenticated } = useAuth();
@@ -28,9 +30,18 @@ const routerList = createBrowserRouter(
       element: <Register />,
     },
     {
+      path: "/our-services",
+      element: <OurServices />,
+    },
+    {
+      path:"/about-us",
+      element: <AboutUs />,
+    },
+    {
       path: "*",
       element: <Error />,
     },
+
   ],
   { basename: `${environments.ghPageEnv}` }
 );

@@ -28,7 +28,7 @@ const ImageSection = ({
         {!openModalImage ? 'edit' : 'close'}
       </span>
       {openModalImage && (
-        <ModalTemplate>
+        <ModalTemplate close={isOpenModalImage}>
           <form onSubmit={handleSubmit(onSubmitImage)}>
             <input
               name="image"
