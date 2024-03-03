@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { open } from "fs";
 import Tables from "../../Components/Table/Tables";
 import MainTemplate from "../../Templates/Main.template"
 import "./Home.scss";
-
+import { brown } from "@mui/material/colors";
+import Carrousel from "../../Components/Slider/Slider";
 
 const Home = () => {
 
   return (
     <MainTemplate>
+      <Carrousel/>
       <div className="homeContainer">
         <div className="container">
           <h2>Cita Express</h2>
@@ -36,11 +38,11 @@ const Home = () => {
           </div>
           <div className="right">
             <div className="boxCircle">
-              <div className="brown">
-              </div>
-              <div className="orange"></div>
-              <div className="blue"></div> 
-              </div>
+            <button className="brown"></button>
+            <button className="orange"></button>
+            <button className="blue"></button> 
+            </div>
+            <div id="displayText"></div>
             <div>
               <h2>Agenda, gestiona, controla tus citas de la mejor forma</h2>
               <h3>Tanto si eres cliente como proveedor, nuestra plataforma te ofrece una solución completa:</h3>
@@ -65,5 +67,4 @@ const Home = () => {
     </MainTemplate>
   )
 }
-
 export default Home
