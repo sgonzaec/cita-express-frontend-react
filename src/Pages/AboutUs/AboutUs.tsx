@@ -26,7 +26,7 @@ const AboutUs = () => {
       </div>
 
       <div className="contenedor2">
-        <h3 className="ultimo">CitaExpress proyecto hecho en Colombia.
+        <h3 className="ultimo">CitaExpress proyecto hecho en Colombia. 🇨🇴
         </h3>
       </div>
 
