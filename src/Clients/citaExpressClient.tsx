@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import environments from "../Environments/environments";
 
 const citaExpressClient = {
-  getUserData:async (email:string) => {
+  getUserData: async (email: string) => {
     try {
       return await fetch(`${environments.baseURL}/api/clients?user=${email}`, {
         method: "GET",
@@ -19,7 +19,7 @@ const citaExpressClient = {
         }
       });
     } catch (error) {
-      throw new Error()
+      throw new Error();
     }
   },
 
@@ -41,18 +41,26 @@ const citaExpressClient = {
         }
       });
     } catch (error) {
-      throw new Error()
+      throw new Error();
     }
   },
 
-  updateImage: async (body: any) => {
+  updateImage: async (data: any) => {
+    
+    if (!data.image[0] || !localStorage.getItem("userEmail")) return
+
+
+    const formData = new FormData();
+    formData.append("image", data.image[0]);
+    formData.append("user", localStorage.getItem("userEmail")!);
+
     try {
       return await fetch(`${environments.baseURL}/api/clients/updateImage`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
-        body: JSON.stringify(body),
+        body: formData,
       }).then((res) => {
         if (res.status >= 200 && res.status < 300) {
           toast.success(`Se actualizó la imagen correctamente.`);
@@ -63,9 +71,9 @@ const citaExpressClient = {
         }
       });
     } catch (error) {
-      throw new Error()
+      throw new Error();
     }
-  }
+  },
 };
 
 export default citaExpressClient;

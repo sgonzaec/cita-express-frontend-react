@@ -3,7 +3,7 @@ export type ClientResponse = {
 }
 
 type client = {
-    adress: string,
+    address: string,
     city: string,
     country: string,
     cp: string,

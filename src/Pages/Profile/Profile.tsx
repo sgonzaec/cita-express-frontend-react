@@ -19,6 +19,7 @@ const Profile = () => {
     handleSubmit,
     register,
     onSubmitImage,
+    binaryToImage
   } = ProfileService();
 
   return (
@@ -35,6 +36,7 @@ const Profile = () => {
               handleSubmit={handleSubmit}
               onSubmitImage={onSubmitImage}
               register={register}
+              binaryToImage={binaryToImage}
             />
             <div className="card">
               <span
