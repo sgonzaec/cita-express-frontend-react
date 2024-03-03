@@ -3,13 +3,17 @@ import Tables from "../../Components/Table/Tables";
 import MainTemplate from "../../Templates/Main.template"
 import "./Home.scss";
 import { brown } from "@mui/material/colors";
+import SearchBar from "../../Components/SearchBar/SearchBar";
 import Carrousel from "../../Components/Slider/Slider";
 
 const Home = () => {
 
   return (
     <MainTemplate>
-      <Carrousel/>
+      <div className="up-image">
+        <SearchBar />
+        <Carrousel />
+      </div>
       <div className="homeContainer">
         <div className="container">
           <h2>Cita Express</h2>
@@ -38,9 +42,9 @@ const Home = () => {
           </div>
           <div className="right">
             <div className="boxCircle">
-            <button className="brown"></button>
-            <button className="orange"></button>
-            <button className="blue"></button> 
+              <button className="brown"></button>
+              <button className="orange"></button>
+              <button className="blue"></button>
             </div>
             <div id="displayText"></div>
             <div>
