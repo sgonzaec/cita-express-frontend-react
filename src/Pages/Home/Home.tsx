@@ -1,4 +1,3 @@
-import { open } from "fs";
 import Tables from "../../Components/Table/Tables";
 import MainTemplate from "../../Templates/Main.template"
 import "./Home.scss";

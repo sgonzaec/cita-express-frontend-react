@@ -63,6 +63,8 @@ div.homeContainer {
         width: 30px;
         border-radius: 50%;
         background-color: var(--brown);
+     }
+     .orange{
         cursor: pointer;
         &:hover{
             scale: 1.2;
@@ -76,6 +78,8 @@ div.homeContainer {
         width: 30px;
         border-radius: 50%;
         background-color: var(--orange);
+     }
+     .blue{
         cursor: pointer;
         &:hover{
             scale: 1.2;
