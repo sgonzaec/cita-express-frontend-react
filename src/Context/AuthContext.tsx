@@ -7,6 +7,7 @@ import React, {
   useEffect,
 } from "react";
 import environments from "../Environments/environments";
+import jwt from 'jsonwebtoken';
 
 interface AuthContextProps {
   isAuthenticated: boolean;
@@ -24,8 +25,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const TOKEN_KEY: string = "authToken";
   const EXPIRATION_KEY: string = "tokenExpiration";
 
-  const CryptoJS = require("crypto-js");
-  const iv = CryptoJS.lib.WordArray.random(16);
 
   useEffect(() => {
     const checkAuthentication = () => {
@@ -46,13 +45,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   }, []);
 
   const login = (user: string, password: string) => {
-    const authToken = CryptoJS.AES.encrypt(
-      `${password}-${user}`,
-      environments.passCrpto,
-      { iv }
-    ).toString();
+
+    const authUser = {username:user};
+    const authToken = jwt.sign({authUser},
+      environments.secretKey, { expiresIn: '24h'}
+      )
     const tokenExpirationMs = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours
-    localStorage.setItem(TOKEN_KEY, authToken);
+    localStorage.setItem(TOKEN_KEY, `jwt ${authToken}`);
     localStorage.setItem(EXPIRATION_KEY, tokenExpirationMs.toString());
     setIsAuthenticated(true);
   };

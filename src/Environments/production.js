@@ -4,5 +4,6 @@ export default {
   name: 'Cita Express',
   baseURL: '',
   ghPageEnv: '/cita-express-frontend-react/',
-  passCrpto: 'test'
+  passCrpto: 'test',
+  secretKey: 'C1t4Xpr3ss*.*'
 };
