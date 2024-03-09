@@ -1,0 +1,61 @@
+
+.contenedor-qs{
+    text-align: center;
+    
+    p{
+        font-weight: lighter;
+        margin: 1em 5em;
+        font-weight: 3em;
+      
+    }
+}
+p{text-align: justify;
+
+}
+    
+div.caja{
+        display: flex;
+        width: 90vw;
+        margin: 50px 0px;
+        .left{
+            position: relative;
+            width: 100px;
+            font-weight: lighter;
+            flex: 1;
+            margin: 10px 80px;
+            
+            .mision{
+                width: 8em;
+                position: relative;
+                left: 150px;
+            }
+        }
+        .rigth{
+            position: relative;
+            left:70px;
+            font-weight: lighter;
+            flex: 1;
+            margin: 10px 50px;
+
+            .vision{
+                width: 8em;
+                position: relative;
+                left:160px;
+            }
+        }
+    
+}
+.contenedor2{
+    text-align: center;
+    font-weight: 3em;
+}
+.ultimo{
+    font-weight: lighter;
+    margin: 1em 5em;
+    color: var(--black);
+}
+
+
+
+
+    

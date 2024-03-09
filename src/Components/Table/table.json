@@ -1,0 +1,19 @@
+[
+    {
+        "fecha": "10-11-24",
+        "hora": "11:00",
+        "servicio": "Barberia",
+        "tecnico": "Juanca Correa",
+        "duracionEstimada": "2 horas",
+        "estadoCita": "Confirmada"
+    },
+    {
+        "fecha": "10-11-24",
+        "hora": "13:30",
+        "servicio": "Cocina",
+        "tecnico": "Susana Horia",
+        "duracionEstimada": "3 horas",
+        "estadoCita": "Por confirmar"
+    }   
+
+]

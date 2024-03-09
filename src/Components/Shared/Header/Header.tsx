@@ -1,16 +1,28 @@
 import { Link } from "react-router-dom";
-import Logo from "../../../Logo.svg";
+import Logo from "../../../Assets/Logo_recortado.png";
 import "./Header.scss";
 import { useAuth } from "../../../Context/AuthContext";
+import { useEffect, useState } from "react";
+import Menu from "../../Menu/Menu";
 
 const Header = () => {
+  const [openMenu, isOpenMenu] = useState<boolean>(false)
   const auth = useAuth();
+
+  useEffect(() => {
+    if (openMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [openMenu])
 
   return (
     <header>
+      {openMenu && <Menu />}
       <div className="firstGroup">
-        <span className="material-symbols-outlined">menu</span>
-        <img src={Logo} alt="Cita Express Logo" />
+        <span className="material-symbols-outlined" onClick={() => isOpenMenu(!openMenu)} >{openMenu ? "close" : "menu"}</span>
+        <Link to={'/'}><img src={Logo} alt="Cita Express Logo" /></Link>
       </div>
       <div className="buttons">
         <ul>
