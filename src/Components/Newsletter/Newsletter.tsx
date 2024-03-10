@@ -7,7 +7,7 @@ const Newsletter = () => {
       <p>Y recibe 10% de descuento en tu primera contratación.</p>
       <form>
         <input type="email" name="emailnewsletter" id="newsletter" placeholder="Ingresa tu email" />
-        <input type="submit" value="Suscribirse" />
+        <button>{window.innerWidth <= 768 ? <span className="material-symbols-outlined">send</span> : 'Suscribirse'}</button>
       </form>
     </section>
   );
