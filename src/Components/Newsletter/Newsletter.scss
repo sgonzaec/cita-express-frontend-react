@@ -1,0 +1,32 @@
+.newsletter{
+    background-color: var(--gray);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2{
+        margin: 0;
+    }
+    p{
+        text-align: center;
+        margin: 0 0 1em 0;
+    }
+    form{
+        display: flex;
+        align-self: center;
+        width: 60%;
+        input[type="email"]{
+            width: 80%;
+            border-radius: 4px 0 0 4px;
+            &:focus-visible {
+                outline: -webkit-focus-ring-color none 0px;
+            }
+        }
+        input[type="submit"]{
+            width: 20%;
+            border-radius: 0 4px 4px 0;
+        }
+    }
+}
