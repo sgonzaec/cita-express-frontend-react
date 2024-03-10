@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../../../Assets/Logo_recortado.png";
 import "./Header.scss";
 import { useAuth } from "../../../Context/AuthContext";
 import { useEffect, useState } from "react";
 import Menu from "../../Menu/Menu";
+import SearchBar from "../../SearchBar/SearchBar";
 
 const Header = () => {
   const [openMenu, isOpenMenu] = useState<boolean>(false)
+  
+  let location = useLocation();
   const auth = useAuth();
 
   useEffect(() => {
@@ -24,6 +27,7 @@ const Header = () => {
         <span className="material-symbols-outlined" onClick={() => isOpenMenu(!openMenu)} >{openMenu ? "close" : "menu"}</span>
         <Link to={'/'}><img src={Logo} alt="Cita Express Logo" /></Link>
       </div>
+      {location.pathname !== '/' && <SearchBar/>}
       <div className="buttons">
         <ul>
           <li>
@@ -31,7 +35,7 @@ const Header = () => {
               <span className="material-symbols-outlined">person</span>Perfil
             </Link>
           </li>
-          <li onClick={auth.logout}>
+          <li onClick={auth.logout} className="exit_app">
             <span className="material-symbols-outlined">exit_to_app</span>Salir
           </li>
         </ul>

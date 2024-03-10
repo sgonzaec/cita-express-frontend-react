@@ -3,8 +3,9 @@ import dataImages from "./Image.json";
 
 const Carrousel = () => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
+        arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
@@ -12,7 +13,6 @@ const Carrousel = () => {
         autoplaySpeed: 2000,
         cssEase: "linear",
         pauseOnHover: true
-
     }
     return (
         <Slider {...settings}>

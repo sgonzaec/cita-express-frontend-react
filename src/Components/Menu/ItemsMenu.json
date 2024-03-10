@@ -1,23 +1,23 @@
 [
     {
         "path": "/",
-        "name": "Home"
+        "icon": "home",
+        "name": "Inicio"
     },
     {
-        "path": "/ejemplo",
-        "name": "ejemplo"
+        "path": "/appoiments",
+        "icon": "calendar_month",
+        "name": "Mis citas"
 
     },
     {
-        "path": "/ejemplo",
-        "name": "ejemplo"
+        "path": "/history",
+        "icon": "history",
+        "name": "Citas cumplidas"
     },
     {
-        "path": "/ejemplo",
-        "name": "ejemplo"
-    },
-    {
-        "path": "/ejemplo",
-        "name": "ejemplo"
+        "path": "/profile",
+        "icon": "person",
+        "name": "Perfil"
     }
 ]

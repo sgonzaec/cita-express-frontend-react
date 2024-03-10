@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
-import ItemsMenu from "./ItemsMenu.json"
-import "./Menu.scss"
+import { Link } from "react-router-dom";
+import ItemsMenu from "./ItemsMenu.json";
+import "./Menu.scss";
 
 const Menu = () => {
   return (
@@ -12,13 +12,19 @@ const Menu = () => {
       <div className="menuList">
         <ul>
           {ItemsMenu.map((item, index) => {
-            return<Link to={item.path} key={index}> <li>{item.name}</li></Link>
+            return (
+              <Link to={item.path} key={index}>
+                <span className="material-symbols-outlined">{item.icon}</span>
+                {" "}
+                <li>{item.name}</li>
+              </Link>
+            );
           })}
         </ul>
       </div>
       <hr />
     </nav>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
