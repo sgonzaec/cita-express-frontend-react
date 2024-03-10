@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { citaExpressClient } from "../Clients";
 import toast from "react-hot-toast";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useAuth } from "../Context/AuthContext";
 import { ClientResponse } from "../Typings/Client";
-
-interface ProfileServiceResult {
-  loading: boolean;
-  response: ClientResponse;
-  isOpenModalData: any;
-  openModalData: boolean;
-  openModalImage: boolean;
-  isOpenModalImage: any;
-  onSubmit: any;
-  handleSubmit: any;
-  register: any;
-  onSubmitImage: any;
-  binaryToImage: any
-}
+import citaExpressLocation from "../Clients/citaExpressLocation";
+import { CountryList } from "../Typings/Countries";
+import { ProfileServiceResult } from "../Typings/Pages/Profile";
 
 const defaultData: ClientResponse = {
   client: {
@@ -38,6 +27,7 @@ export const ProfileService = (): ProfileServiceResult => {
   const [loading, setLoading] = useState(false);
   const [openModalImage, isOpenModalImage] = useState(false);
   const [openModalData, isOpenModalData] = useState(false);
+  const [countryList, setCountryList] = useState<CountryList>({ countries: [] });
   const [userEmail] = useState(
     localStorage.getItem("userEmail") ? localStorage.getItem("userEmail") : null
   );
@@ -47,6 +37,11 @@ export const ProfileService = (): ProfileServiceResult => {
 
   const auth = useAuth();
 
+  useMemo(async () => {
+    const responseLocations = await citaExpressLocation.getCountries();
+    setCountryList(responseLocations);
+  }, []);
+
   useEffect(() => {
     if (userEmail && userEmail !== response.client.email) {
       getDataUser(userEmail);
@@ -55,6 +50,7 @@ export const ProfileService = (): ProfileServiceResult => {
     }
     // eslint-disable-next-line
   }, [auth, userEmail]);
+
 
   const getDataUser = async (data: string) => {
     try {
@@ -101,6 +97,7 @@ export const ProfileService = (): ProfileServiceResult => {
     handleSubmit,
     register,
     onSubmitImage,
-    binaryToImage
+    binaryToImage,
+    countryList
   };
 };
