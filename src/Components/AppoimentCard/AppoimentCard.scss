@@ -1,0 +1,57 @@
+.appoiment_card {
+  min-height: 24em;
+  max-height: 24em;
+  .title_section {
+    display: flex;
+    justify-content: space-between;
+    p {
+      margin: 0;
+      font-size: 23px;
+      font-weight: bold;
+    }
+    span {
+      font-style: italic;
+    }
+  }
+  .conten_section {
+    margin: 2em 0;
+    .supplier_section {
+      display: flex;
+      gap: 1em;
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+      }
+      .info {
+        padding: 0 1em;
+        width: 80%;
+        .note {
+          text-align: left;
+        }
+      }
+    }
+    .service_section {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .contact_section {
+    display: flex;
+    gap: 5px;
+    button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background-color: transparent;
+      color: black;
+      border: 1px solid transparent;
+      &:hover {
+        background-color: var(--dark-blue);
+        color: var(--white);
+        border-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.skeleton_appoiment_card {
+  min-height: 24em;
+  max-height: 24em;
+  .skeleton_title_section {
+    display: flex;
+    justify-content: space-between;
+    p {
+      width: 30em;
+      height: 1em;
+    }
+    span {
+      width: 7em;
+      height: 1em;
+    }
+  }
+  .skeleton_conten_section {
+    margin: 2em 0;
+    .skeleton_supplier_section {
+      display: flex;
+      gap: 1em;
+      span.skeleton_image {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+      }
+      .skeleton_info {
+        padding: 0 1em;
+        width: 80%;
+        .skeleton_name_supplier,
+        .skeleton_type_supplier {
+          min-height: 1em;
+        }
+        .skeleton_note {
+          min-height: 6em;
+        }
+      }
+    }
+    .skeleton_service_section {
+      margin-top: 0.5em;
+      min-height: 2em;
+      display: flex;
+      flex-direction: column;
+      width: 15em;
+      float: inline-end;
+    }
+  }
+  .skeleton_contact_section {
+    display: flex;
+    gap: 5px;
+    span {
+      height: 4em;
+      width: 10em;
+      border-radius: 4px;
+    }
+  }
+}

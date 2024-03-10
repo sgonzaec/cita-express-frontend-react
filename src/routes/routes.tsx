@@ -8,6 +8,7 @@ import { useAuth } from "../Context/AuthContext";
 import Profile from "../Pages/Profile/Profile";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import OurServices from "../Pages/OurServices/OurServices";
+import Appoiments from "../Pages/Appiments/Appoiments";
 
 const AuthenticatedRoute: React.FC<{ element: React.ReactNode }> = ({ element }) => {
   const { isAuthenticated } = useAuth();
@@ -36,6 +37,10 @@ const routerList = createBrowserRouter(
     {
       path:"/about-us",
       element: <AboutUs />,
+    },
+    {
+      path: "/my-appoiments",
+      element: <AuthenticatedRoute element={<Appoiments />} />,
     },
     {
       path: "*",
