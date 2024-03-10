@@ -10,6 +10,7 @@ const DefaultData: AppoimentList = {
       country: "",
       id_appoiment: 0,
       id_client: "",
+      supplier_cp: "",
       id_supplier: "",
       note: "",
       service_type: "",

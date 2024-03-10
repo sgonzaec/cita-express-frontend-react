@@ -42,7 +42,7 @@ const AppoimentCard = ({
             </div>
             <div className="service_section">
               <div className="location">
-                {appoiment.city}, {appoiment.country} - Código Postal: 0555410
+                {appoiment.city}, {appoiment.country} - Código Postal: {appoiment.supplier_cp}
               </div>
               <div className="rate">
                 Puntiación: &#9733; &#9733; &#9733; &#9733; &#9733;
