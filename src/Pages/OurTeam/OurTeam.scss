@@ -1,0 +1,47 @@
+body{
+    background-image: url("./../../Assets/Fondo\ Cita.png");
+}
+section{
+    // display:flex;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    padding: 30px;
+    top: 50%;
+    left: 5%;
+
+}
+    
+.style-team {
+    width: 5em 5em;
+    height: 10em;
+    border-radius: 50%;
+    border: solid var(--white);
+    background-color: aqua;
+    cursor:pointer;
+    
+    
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+
+    &:hover {
+        filter: grayscale(0);
+        -webkit-filter: grayscale(0);
+        -moz-filter: grayscale(0);
+        -ms-filter: grayscale(0);
+        -o-filter: grayscale(0);
+    }
+    
+}
+
+#displayText{
+    font-style: italic;
+    color: white;
+}
