@@ -60,11 +60,8 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@types/jsonwebtoken": "^9.0.6",
-=======
     "@types/react-slick": "^0.23.13",
->>>>>>> 9cf2cffc3966749bb13ec992015d2ac4ef3da74a
     "env-cmd": "^10.1.0"
   }
 }
