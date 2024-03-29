@@ -8,7 +8,7 @@ const info = ourTeamData()
     console.log(info)
     return (
         <MainTemplate>
-            <body>
+            <body className="bgbody">
                 <section>
                     <div className="left">
                         {info.map((item, index) => {
