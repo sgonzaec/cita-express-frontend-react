@@ -5,8 +5,13 @@
         "name": "Inicio"
     },
     {
-        "path": "/my-appoiments",
+        "path": "/general-appoiments",
         "icon": "calendar_month",
+        "name": "Todas las citas"
+    },
+    {
+        "path": "/my-appoiments",
+        "icon": "checklist",
         "name": "Mis citas"
 
     },

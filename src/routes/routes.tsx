@@ -48,6 +48,10 @@ const routerList = createBrowserRouter(
       element: <AuthenticatedRoute element={<Appoiments />} />,
     },
     {
+      path: "/general-appoiments",
+      element: <Appoiments />,
+    },
+    {
       path: "*",
       element: <Error />,
     },

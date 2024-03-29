@@ -3,47 +3,45 @@ import {
   MaterialReactTable,
   useMaterialReactTable
 } from "material-react-table";
+import { Appoiment, AppoimentList } from "../../Typings/Appoiments";
 
-//simple data example - Check out https://www.material-react-table.com/docs/examples/remote for a more complex example
-const data = [
-  {
-    name: "John",
-    lastName: "Cooper",
-    age: 30,
-    city: 'Medellin'
-  },
-  {
-    name: "Sara",
-    age: 25,
-    lastName: "Algo",
-    city: 'Barcelona'
-  },
-  {
-    name: 'Simon',
-    age: 25,
-    lastName: "Gonzalez",
-    city: 'Japon'
-  }
-];
+interface TableProps {
+  appoimentsData: AppoimentList;
+}
 
-export default function Table() {
+const Table: React.FC<TableProps> = ({ appoimentsData }) => {
+
+  const data = appoimentsData.appoiments.map((appointment: Appoiment) => {
+    return {
+      id: appointment.id_appoiment,
+      supplier_name: appointment.id_supplier,
+      service_type: appointment.service_type,
+      note: appointment.note,
+      city: appointment.city
+    };
+  });
+
   const columns = useMemo(
     () => [
       {
-        accessorKey: "name", 
-        header: "Name" 
+        accessorKey: "id", 
+        header: "Id" 
       },
       {
-        accessorKey: "age", 
-        header: "age"
+        accessorKey: "supplier_name", 
+        header: "Tecnico" 
       },
       {
         accessorKey: "city", 
         header: "City" 
       },
       {
-        accessorKey: "lastName",
-        header: "Apellido" 
+        accessorKey: "service_type",
+        header: "Servicio" 
+      },
+      {
+        accessorKey: "note", 
+        header: "Descripción"
       }
     ],
     []
@@ -56,3 +54,5 @@ export default function Table() {
 
   return <MaterialReactTable table={table} />;
 } 
+
+export default Table

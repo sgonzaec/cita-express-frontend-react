@@ -6,6 +6,7 @@ import UserDataList from "./ProfileComponents/UserDataList";
 import ModalTemplate from "../../Templates/Modal.template";
 import Table from "../../Components/Table/Table";
 import ImageSection from "./ProfileComponents/ImageSection";
+import AppoimentServices from "../../Services/MyAppoiments.service";
 
 const Profile = () => {
   const {
@@ -22,6 +23,7 @@ const Profile = () => {
     binaryToImage,
     countryList,
   } = ProfileService();
+  const { appoimentsData } = AppoimentServices();
 
   return (
     <MainTemplate>
@@ -58,11 +60,11 @@ const Profile = () => {
           <section className="left-section">
             <div className="card">
               <h2>Tus Servicios</h2>
-              <Table />
+              <Table appoimentsData={appoimentsData} />
             </div>
             <div className="card">
               <h2>Servicios contratados</h2>
-              <Table />
+              <Table appoimentsData={appoimentsData} />
             </div>
           </section>
           {openModalData && (
