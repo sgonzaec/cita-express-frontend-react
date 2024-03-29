@@ -14,18 +14,19 @@ const DefaultData: AppoimentList = {
       id_supplier: "",
       note: "",
       service_type: "",
-    }
+    },
   ],
-}
+};
 
-const AppoimentServices = (): AppoimentResult => {
+const GeneralAppoimentsServices = (): AppoimentResult => {
   const [loading, isLoading] = useState(false);
   const [appoimentsData, setAppoimentsData] = useState(DefaultData);
 
   useEffect(() => {
     const getAppoimets = async () => {
-      const appoimentsResponse = await citaExpressAppoiments.getAllApoimetns(
-        isLoading
+      const appoimentsResponse = await citaExpressAppoiments.getApoimetns(
+        isLoading,
+        null
       );
       setAppoimentsData(appoimentsResponse);
     };
@@ -38,4 +39,4 @@ const AppoimentServices = (): AppoimentResult => {
   };
 };
 
-export default AppoimentServices;
+export default GeneralAppoimentsServices;

@@ -2,10 +2,10 @@ import toast from "react-hot-toast";
 import environments from "../Environments/environments";
 
 const citaExpressAppoiments = {
-  getAllApoimetns: async (isLoading: any) => {
+  getApoimetns: async (isLoading: any, email: string | null) => {
     isLoading(true);
     try {
-      return await fetch(`${environments.baseURL}/api/appoiments`, {
+      return await fetch(`${environments.baseURL}/api/appoiments${email ? `/${email}` : ''}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

@@ -1,7 +1,6 @@
 import Tables from "../../Components/Table/Tables";
 import MainTemplate from "../../Templates/Main.template"
 import "./Home.scss";
-import { brown } from "@mui/material/colors";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 import Carrousel from "../../Components/Slider/Slider";
 

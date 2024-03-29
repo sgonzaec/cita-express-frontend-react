@@ -1,4 +1,3 @@
-import MainTemplate from "../../Templates/Main.template"
 import "./Tables.scss";
 import table from "./table.json"
 

@@ -1,17 +1,29 @@
-import AppoimentCard from "../../Components/AppoimentCard/AppoimentCard"
-import AppoimentServices from "../../Services/Appoiments.service"
-import MainTemplate from "../../Templates/Main.template"
-import { Appoiment } from "../../Typings/Appoiments"
+import AppoimentCard from "../../Components/AppoimentCard/AppoimentCard";
+import AppoimentOrchestrator from "../../Helpers/AppoimentOrchestrator";
+import MainTemplate from "../../Templates/Main.template";
+import { Appoiment } from "../../Typings/Appoiments";
+import { Navigate } from "react-router-dom";
 
 const Appoiments = () => {
-  const {loading, appoimentsData} = AppoimentServices()
+  const orchestratorResult = AppoimentOrchestrator();
+
+  if (!orchestratorResult) {
+    return Navigate({to: '/404'})
+  }
+
+  const { loading, appoimentsData } = orchestratorResult;
+
+  if (!appoimentsData) {
+    return <div>No hay datos de citas disponibles.</div>; 
+  }
+
   return (
     <MainTemplate>
-      {appoimentsData.appoiments.map((appoiment: Appoiment, index: number) => {
-        return <AppoimentCard loading={loading} appoiment={appoiment} key={index}/>
-      })}
+      {appoimentsData.appoiments.map((appoiment: Appoiment, index: number) => (
+        <AppoimentCard loading={loading} appoiment={appoiment} key={index} />
+      ))}
     </MainTemplate>
-  )
-}
+  );
+};
 
-export default Appoiments
+export default Appoiments;
