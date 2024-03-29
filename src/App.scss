@@ -14,3 +14,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
+
+.MuiFormControl-root.MuiTextField-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+  .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+    border-radius: 15px;
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}

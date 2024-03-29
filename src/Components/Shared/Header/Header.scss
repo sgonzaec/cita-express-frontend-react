@@ -13,12 +13,18 @@ header {
       font-size: 2.5em;
       cursor: pointer;
       &:hover {
-        opacity: 0.6;
+        color: var(--white);
+        border-radius: 8px;
+        background-color: var(--blue);
       }
     }
     img {
       width: 10em;
     }
+  }
+  .search-bar {
+    width: 50%;
+    align-self: center;
   }
   ul {
     list-style: none;
@@ -31,10 +37,29 @@ header {
       align-items: center;
       text-decoration: none;
       color: black;
+      padding: 4px;
       cursor: pointer;
+    }
+    li {
       &:hover {
-        opacity: 0.6;
+        a{
+        color: var(--white);
+        }
+        border-radius: 8px;
+        background-color: var(--blue);
+      }
+    }
+    .exit_app {
+      &:hover {
+        color: var(--white);
+        border-radius: 8px;
+        background-color: var(--redcherry);
       }
     }
   }
+}
+.header_searchbar_container{
+  padding: 0.5em 1em;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }

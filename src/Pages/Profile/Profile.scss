@@ -1,15 +1,15 @@
 .profile {
   display: flex;
   margin-top: 3em;
-  // @include breakpoint($breakpoint-medium) {
-  //   flex-direction: column;
-  // }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
   .rigth-section {
     width: 30%;
-    // @include breakpoint($breakpoint-medium) {
-    //   width: 95%;
-    //   margin: auto;
-    // }
+    @media screen and (max-width: 768px) {
+      width: 95%;
+      margin: auto;
+    }
     text-align: center;
     picture {
       position: relative;
@@ -43,9 +43,9 @@
   }
   .left-section {
     width: 70%;
-    // @include breakpoint($breakpoint-medium) {
-    //   width: 95%;
-    //   margin: auto;
-    // }
+    @media screen and (max-width: 768px) {
+      width: 95%;
+      margin: auto;
+    }
   }
 }

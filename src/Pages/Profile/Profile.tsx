@@ -19,7 +19,8 @@ const Profile = () => {
     handleSubmit,
     register,
     onSubmitImage,
-    binaryToImage
+    binaryToImage,
+    countryList,
   } = ProfileService();
 
   return (
@@ -50,6 +51,7 @@ const Profile = () => {
                 response={response}
                 handleSubmit={handleSubmit}
                 register={register}
+                countryList={countryList}
               />
             </div>
           </section>
@@ -72,6 +74,7 @@ const Profile = () => {
                 onSubmit={onSubmit}
                 handleSubmit={handleSubmit}
                 register={register}
+                countryList={countryList}
               />
             </ModalTemplate>
           )}

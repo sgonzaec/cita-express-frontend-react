@@ -1,178 +1,162 @@
-.up-image{
-    position: relative;
-    .search-bar{
-        width:50%;
-        position: absolute;
-        z-index: 2;
-        background-color: rgba(0, 0, 0, .4);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        .MuiFormControl-root.MuiTextField-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-            width: 100%;
-            .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
-                color: var(--white);
-            }
-        }
-    }
+.up-image {
+  position: relative;
+  .search-bar {
+    width: 50%;
+    position: absolute;
+    z-index: 2;
+    background-color: rgb(255 255 255);
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+  }
 }
 
 div.homeContainer {
-    background-color: #F7F8F7;
+  background-color: #f7f8f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.container {
+    width: 60em;
+    margin: 50px;
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  div.content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 90vw;
+  }
 
-    div.container {
-        width: 60em;
-        margin: 50px;
+  div.left,
+  div.right {
+    flex: 1;
+  }
 
-        h2 {
-            text-align: center;
-        }
+  div.left {
+    display: flex;
+    justify-content: center;
+  }
+
+  div.boxCircle {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+
+    .brown {
+      padding: 1em;
+      animation: botones 2.5s ease;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-color: var(--brown);
+    }
+    .orange {
+      cursor: pointer;
+      &:hover {
+        scale: 1.2;
+      }
+    }
+    .orange {
+      padding: 1em;
+      animation: botones 2.5s ease;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-color: var(--orange);
+    }
+    .blue {
+      cursor: pointer;
+      &:hover {
+        scale: 1.2;
+      }
+    }
+    .blue {
+      padding: 1em;
+      animation: botones 2.5s ease;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-color: var(--dark-blue);
+      cursor: pointer;
+      &:hover {
+        scale: 1.2;
+      }
+    }
+  }
+
+  div.appointmentBox {
+    width: 29em;
+    height: 10%;
+    background-color: white;
+
+    div.box {
+      position: relative;
+      left: -5em;
+      width: 35em;
+      background-color: white;
+      height: 13em;
+      border: 5px solid #464444;
+      border-radius: 18px;
+      box-shadow: 4px 7px 15px -3px rgba(0, 0, 0, 0.75);
     }
 
-    p {
-        text-align: justify;
-    }
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      gap: 1em;
 
-    div.content {
-        display: flex;
-        width: 90vw;
-    }
-
-    div.left,
-    div.right {
-        flex: 1;
-    }
-
-    div.left {
-        display: flex;
-        justify-content: center;
-    }
-
-    div.boxCircle{
-        display: flex;
-        width: 100%;
-        gap: 15px;
-
-     .brown{
-        padding:1em;
-        animation: botones 2.5s ease;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        background-color: var(--brown);
-     }
-     .orange{
-        cursor: pointer;
-        &:hover{
-            scale: 1.2;
-   
-        }
-     }
-     .orange{
-        padding:1em;
-        animation: botones 2.5s ease;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        background-color: var(--orange);
-     }
-     .blue{
-        cursor: pointer;
-        &:hover{
-            scale: 1.2;
-        }
-     }
-     .blue{
-        padding:1em;
-        animation: botones 2.5s ease;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        background-color: var(--dark-blue);
-        cursor: pointer;
-        &:hover{
-            scale: 1.2;
-        }
-     }
-    
-    }
-
-    div.appointmentBox {
-        width: 29em;
-        height: 10%;
+      button {
+        padding: 8px;
+        color: var(--black);
         background-color: white;
+      }
 
-        div.box {
-            position: relative;
-            left: -5em;
-            width: 35em;
-            background-color: white;
-            height: 13em;
-            border: 5px solid #464444;
-            border-radius: 18px;
-            box-shadow: 4px 7px 15px -3px rgba(0, 0, 0, 0.75);
+      button#confirm {
+        border: 1px solid var(--green);
 
-
+        &:hover {
+          background-color: var(--green);
+          color: white;
         }
+      }
 
-        ul {
-            display: flex;
-            justify-content: flex-end;
-            list-style: none;
-            gap: 1em;
+      button#modify {
+        border: 1px solid #f7dc6f;
 
-            button {
-                padding: 8px;
-                color: var(--black);
-                background-color: white;
-            }
-
-            button#confirm {
-
-                border: 1px solid var(--green);
-
-                &:hover {
-                    background-color: var(--green);
-                    color: white;
-                }
-
-            }
-
-            button#modify {
-
-                border: 1px solid #F7DC6F;
-
-                &:hover {
-                    background-color: #FAFA33;
-                    color: white;
-                }
-            }
-
-            button#cancel {
-
-                border: 1px solid var(--redcherry);
-
-                &:hover {
-                    background-color: var(--redcherry);
-                    color: white;
-                }
-            }
-
+        &:hover {
+          background-color: #fafa33;
+          color: white;
         }
+      }
 
+      button#cancel {
+        border: 1px solid var(--redcherry);
+
+        &:hover {
+          background-color: var(--redcherry);
+          color: white;
+        }
+      }
     }
+  }
 }
 
-@keyframes botones{
-    
-    from{
-        transform: translateX(100px);
-        opacity: 0.001;
-    }
-    to{
-       transform: translateX(0px);
-    }
+@keyframes botones {
+  from {
+    transform: translateX(100px);
+    opacity: 0.001;
+  }
+  to {
+    transform: translateX(0px);
+  }
 }

@@ -2,7 +2,7 @@
 
 export default {
   name: 'Cita Express',
-  baseURL: '',
-  ghPageEnv: '/cita-express-frontend-react/',
+  baseURL: 'https://cita-express-backend-python.onrender.com',
+  ghPageEnv: '/',
   passCrpto: 'test'
 };

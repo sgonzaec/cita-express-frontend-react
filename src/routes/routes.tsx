@@ -9,6 +9,7 @@ import Profile from "../Pages/Profile/Profile";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import OurServices from "../Pages/OurServices/OurServices";
 import OurTeam from "../Pages/OurTeam/OurTeam";
+import Appoiments from "../Pages/Appiments/Appoiments";
 
 const AuthenticatedRoute: React.FC<{ element: React.ReactNode }> = ({ element }) => {
   const { isAuthenticated } = useAuth();
@@ -41,6 +42,10 @@ const routerList = createBrowserRouter(
     {
       path:"/our-team",
       element: <OurTeam/>,
+    },
+    {
+      path: "/my-appoiments",
+      element: <AuthenticatedRoute element={<Appoiments />} />,
     },
     {
       path: "*",

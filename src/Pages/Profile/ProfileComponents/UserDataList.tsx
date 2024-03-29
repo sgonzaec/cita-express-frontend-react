@@ -1,17 +1,24 @@
 import { ClientResponse } from "../../../Typings/Client";
+import { CountryList } from "../../../Typings/Countries";
+// import { GetStatesFunction } from "../../../Typings/Pages/Profile";
+import LocationImputs from "./LocationImputs";
 
 const UserDataList = ({
   openModalData,
   response,
   onSubmit,
-  handleSubmit, 
-  register
+  handleSubmit,
+  register,
+  countryList,
+  // getStates
 }: {
-  openModalData?: boolean
+  openModalData?: boolean;
   response: ClientResponse;
   onSubmit?: any;
   handleSubmit: any;
   register: any;
+  countryList: CountryList;
+  // getStates: GetStatesFunction
 }) => {
   return (
     <>
@@ -66,24 +73,12 @@ const UserDataList = ({
           disabled={!openModalData ? true : false}
         />
 
-        <label htmlFor="city">Ciudad</label>
-        <input
-          name="city"
-          type="text"
-          {...register("city")}
-          defaultValue={response.client.city}
-          placeholder={response.client.city}
-          disabled={!openModalData ? true : false}
-        />
-
-        <label htmlFor="country">Pais</label>
-        <input
-          name="country"
-          type="text"
-          {...register("country")}
-          defaultValue={response.client.country}
-          placeholder={response.client.country}
-          disabled={!openModalData ? true : false}
+        <LocationImputs
+          openModalData={openModalData}
+          response={response}
+          register={register}
+          countryList={countryList}
+          // getStates={getStates}
         />
 
         <label htmlFor="address">Dirección</label>
@@ -96,9 +91,7 @@ const UserDataList = ({
           disabled={!openModalData ? true : false}
         />
 
-        {openModalData && (
-          <input type="submit" value={'Actualizar'} />
-        )}
+        {openModalData && <input type="submit" value={"Actualizar"} />}
       </form>
     </>
   );
