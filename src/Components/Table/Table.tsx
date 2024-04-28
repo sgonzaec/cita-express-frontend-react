@@ -1,7 +1,7 @@
-import { useMemo } from "react";
+import { useMemo, useEffect, useState } from "react";
 import {
   MaterialReactTable,
-  useMaterialReactTable
+  useMaterialReactTable,
 } from "material-react-table";
 import { Appoiment, AppoimentList } from "../../Typings/Appoiments";
 
@@ -10,49 +10,55 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ appoimentsData }) => {
+  const [data, setData] = useState<Appoiment[]>([]);
 
-  const data = appoimentsData.appoiments.map((appointment: Appoiment) => {
-    return {
-      id: appointment.id_appoiment,
-      supplier_name: appointment.id_supplier,
-      service_type: appointment.service_type,
-      note: appointment.note,
-      city: appointment.city
-    };
-  });
+  useEffect(() => {
+    if (Array.isArray(appoimentsData.appoiments) && !appoimentsData.appoiments.some(appointment => appointment.error)) {
+      const appointments = appoimentsData.appoiments.map((appointment: Appoiment) => ({
+        ...appointment,
+        note: appointment.note || "",
+      }));
+
+      setData(appointments);
+    }
+  }, [appoimentsData]);
 
   const columns = useMemo(
     () => [
       {
-        accessorKey: "id", 
-        header: "Id" 
+        accessorKey: "id_appoiment",
+        header: "Id",
       },
       {
-        accessorKey: "supplier_name", 
-        header: "Tecnico" 
+        accessorKey: "id_supplier",
+        header: "Tecnico",
       },
       {
-        accessorKey: "city", 
-        header: "City" 
+        accessorKey: "city",
+        header: "City",
       },
       {
         accessorKey: "service_type",
-        header: "Servicio" 
+        header: "Servicio",
       },
       {
-        accessorKey: "note", 
-        header: "Descripción"
-      }
+        accessorKey: "note",
+        header: "Descripción",
+      },
     ],
     []
   );
 
   const table = useMaterialReactTable({
     data,
-    columns
+    columns,
   });
 
-  return <MaterialReactTable table={table} />;
-} 
+  return Array.isArray(appoimentsData.appoiments) && !appoimentsData.appoiments.some(appointment => appointment.error) ? (
+    <MaterialReactTable table={table} />
+  ) : (
+    <div>No Se encontraron citas</div>
+  );
+};
 
-export default Table
+export default Table;

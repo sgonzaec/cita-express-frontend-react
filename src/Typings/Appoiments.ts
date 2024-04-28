@@ -1,5 +1,5 @@
 export interface AppoimentList {
-  appoiments: Appoiment[];
+  appoiments: Appoiment[] | never[];
 }
 
 export interface Appoiment {
@@ -11,4 +11,5 @@ export interface Appoiment {
   supplier_cp: string;
   note: string;
   service_type: string;
+  error?: string
 }
